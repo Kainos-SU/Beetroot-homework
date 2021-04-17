@@ -8,21 +8,33 @@
 </head>
 <body>
     <h1>Регистрация пользователя для заказа</h1>
-    <form action="#" method="POST" name="login">
+    <form action="#" method="GET" name="login">
         <fieldset>
             <legend>Данные пользователя</legend>
             <ul style="list-style: none;">
                 <li>
                     <lable for="user">Имя пользователя</lable><br>
-                    <input type="text" id="user" name="user">
+                    <input type="text" id="user" name="user" required>
+                </li>
+                <li>
+                    Введите пол<br>
+                        <label><input type="radio" name="gender" value="male">Мужской</label>
+                        <label><input type="radio" name="gender" value="female">Женский</label>
+                        <br>
                 </li>
                 <li>
                     <lable for="password">Пароль пользователя</lable><br>
-                    <input type="password" id="password" name="pasword">
+                    <input type="password" id="password" name="pasword" required>
                 </li>
                 <li>
                     <label for="email">Email пользователя</label><br>
-                    <input type="email" name="email" id="name">
+                    <input type="email" name="email" id="email" required>
+                </li>
+                <li>
+                    <label>
+                        Введите дату доставки<br>
+                        <input type="date" name="shipping_date">
+                    </label>
                 </li>
                 <li>
                     <input type="submit">
