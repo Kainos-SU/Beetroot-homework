@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Покупки</title>
+    <!--
+        Если можно хотелось бы узнать можно ли оформить данный скрипт покороче
+    -->
+    <script>
+        function add_item () {
+            let counter = 4;
+            let list = document.getElementsByTagName("ul")[0];
+            let item = document.createElement("li");
+            let checkbox = document.createElement("input");
+            let label = document.createElement("label");
+            let name = document.getElementById("adding").value;
+            let value = document.getElementById("adding_name").value;
+            console.log(name);
+            console.log(value);
+            checkbox.setAttribute("type", "checkbox");
+            checkbox.setAttribute("id", `item${++counter}`);
+            checkbox.setAttribute("name", `item${counter}`);
+            checkbox.setAttribute("value", value);
+            label.setAttribute("for", `item${counter}`);
+            label.textContent = name;
+            item.append(checkbox);
+            item.append(label);
+            list.append(item);
+        }
+    </script>
+</head>
+<body>
+    <form action="#" method="POST" name="purchases">
+        <fieldset>
+            <legend>Покупки</legend>
+            <ul style="list-style: none;">
+                <li>
+                <input type="checkbox" id="item1" name="item1" value="cheese"><label for="item1">300 грам твердого сыру</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item2" name="item2" value="bread"><label for="item2">Буханка черного хлеба</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item3" name="item3" value="wine"><label for="item3">Бутилка вина</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="item4" name="item4" value="bananas"><label for="item4">Связка бананов</label>
+                </li>
+            </ul>
+            <button type="submit">Отправить</button>
+    </fieldset>
+    </form>
+
+    <label for="adding">Название товара</label>
+    <input type="text" id="adding"><br>
+    <label for="adding_name">value</label>
+    <input type="text" id="adding_name"><br>
+    <button onclick="add_item()">Добавить</button>
+</body>
+</html>
