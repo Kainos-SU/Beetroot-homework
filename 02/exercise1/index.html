@@ -9,8 +9,8 @@
         Если можно хотелось бы узнать можно ли оформить данный скрипт покороче
     -->
     <script>
+        let counter = 5;
         function add_item () {
-            let counter = 5;
             let list = document.getElementsByTagName("ul")[0];
             let item = document.createElement("li");
             let checkbox = document.createElement("input");
@@ -20,7 +20,7 @@
             console.log(name);
             console.log(value);
             checkbox.setAttribute("type", "checkbox");
-            checkbox.setAttribute("id", `item${counter}`);
+            checkbox.setAttribute("id", `item${++counter}`);
             checkbox.setAttribute("name", `item${counter}`);
             checkbox.setAttribute("value", value);
             label.setAttribute("for", `item${counter}`);
@@ -28,7 +28,6 @@
             item.append(checkbox);
             item.append(label);
             list.append(item);
-            counter += 1;
         }
     </script>
 </head>
