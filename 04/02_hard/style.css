@@ -19,11 +19,8 @@ main{
     font-size: 18px;
     margin: 0 auto;
     max-width: 956px;
-    padding: 10px 7px 30px 7px;
-}
-
-footer {
-    font-size: 20px;
+    width: 90%;
+    padding: 2px 7px 20px 7px;
 }
 
 .company_site{
@@ -57,6 +54,11 @@ footer {
     list-style: none;
 }
 
+.content {
+    display: inline-block;
+    vertical-align: top;
+}
+
 .nav_links {
     display: inline-block;
     padding: 0 calc((42 / 936) * 100%);
@@ -78,55 +80,73 @@ footer {
     padding-bottom: 4px;
 }
 
-.content{
-    display: inline-block;
+.left_side_list{
+    list-style: none;
 }
 
-.side_list{
-    list-style: none;
+.left_side_list li{
+    padding-bottom: 20px;
+}
+
+.aside_links {
+    color: #e95b0d;
 }
 
 .aside_title {
     width: 100%;
     text-align: center;
-    background-color: gray;
+    background-color: #bdbdbd;
     font-size: 18px;
+    border: 1px solid #fff;
 }
 
 .left_panel {
     max-width: 201px;
     width: calc((201 / 956) * 100%);
-    float: left;
-    background-color: #890000;
-    padding-bottom: 10%;
+    background-color: #7d0909;
+    padding: 2px 2px 18% 2px;
+    height: 100%;
 }
 
 .rigth_panel {
     max-width: 152px;
     width: calc((152 / 956) * 100%);
-    float: right;
-    padding-top: 5px;
     padding-bottom: 10px;
     background-color: #fff;
 }
 
-.side_list {
-    padding: 0px 8px 0px 8px;
+.rigth_side_list {
+    padding: 7px 8px 0px 8px;
+    list-style: none;
 }
 
-.side_list hr{
+.rigth_side_list p {
+    padding-top: 15px;
+    padding-bottom: 12px;
+}
+
+.rigth_side_list hr{
     width: 30%;
-    margin: 5% auto;
+    margin: 0 auto;
 }
 
 .main_text {
     width: 62%;
     color: #fff;
-    padding: 0 8px 0 8px;
+    padding: 20px 8px 0 8px;
     line-height: 20px;
     text-indent: 20px;
 }
 
 .main_text p{
-    padding-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 956px;
+    text-align: center;
+    background-color: #e95b11;
+    color: #fff;
+    font-size: 20px;
 }
