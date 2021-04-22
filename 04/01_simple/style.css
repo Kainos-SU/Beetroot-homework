@@ -3,3 +3,75 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/*
+    Ширина - 759px
+*/
+
+header {
+    max-width: 759px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.site_title{
+    font-size: 18px;
+    color: #fff;
+    background-color: #990909;
+    line-height: 25px;
+}
+
+main {
+    margin: 0 auto;
+    padding: 20px 5px 30px 5px;
+    max-width: 759px;
+    width: 90%;
+}
+
+.sunset {
+    width: 100%;
+}
+
+.content p{
+    padding: 25px 0 0 0;
+}
+
+.content em {
+    font-style: italic;
+}
+
+.content strong {
+    font-style: bold;
+}
+
+.blue {
+    color: #5050ff;
+}
+
+.icon_wrapper {
+    box-sizing: border-box;
+    padding: 5px 25% 2px 25%;
+    width: 100%;
+    list-style: none;
+}
+
+.icon {
+    display: inline-block;
+    max-width: 72px;
+    width: 10%;
+    border: 2px dashed #000;
+}
+
+.icon img {
+    width: 100%;
+}
+
+footer {
+    max-width: 759px;
+    width: 90%;
+    background-color: #000;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+}
