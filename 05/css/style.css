@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121116;
+}
+
+.main-wrapper {
+    margin: 0 auto;
+    max-width: 1170px;
+    width: 90%;
+    padding-top: 120px;
+    padding-bottom: 28px;
+    /* Я просто дуже хочу бачити межі блока, оскільки він один на сторінці, а по
+    макету таке враження шо у нього такий самий фон як і у всього документа */
+    border: 2px solid #050505;
+}
+
+.clear::after {
+    content: ".";
+    display: block;
+    clear:both;
+    visibility: hidden;
+    height: 0;
+}
+
+.image-wrapper {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.socials {
+    text-align: center;
+}
+
+.social-header {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    letter-spacing: .1em;
+    margin-bottom: 20px;
+}
+
+.separator {
+    /* width: calc((12 / 100 * 100% * 2 + 30px)); */
+    width: 200px;
+    margin: 0 auto 20px;
+}
+
+.social-list {
+    list-style: none;
+    max-width: 170px;
+    width: calc(24 / 100 * 100% - 30px);
+    margin: 0 auto 85px;
+}
+
+.social-link {
+    float: left;
+    width: 10%;
+    text-align: center;
+    margin: 0 calc(60% / 8);
+}
+
+.footer {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.white {
+    color: #fefbfc;
+}
+
+.blue {
+    color: #19c8fa;
+}
+
