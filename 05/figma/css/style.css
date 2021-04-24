@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.header {
+    position: absolute;
+    padding: 50px 74px 0 74px;
+    top: 0;
+    right: 0;
+    left: 0;
+    outline: 5px solid red;
+    border: 5px solid green;
+}
+
+.clear-floats::after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.header__logo {
+    float: left;
+    width: 64px;
+    height: 64px;
+}
+
+.header__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*
+font-family: 'Raleway', sans-serif;
+ */
+.header__nav {
+    float: right;
+    font-family: 'Poiret One', cursive;
+}
+
+.nav__link{
+    margin-right: 27.51px;
+    color: #000;
+    line-height: 19.41px;
+    font-size: 15px;
+}
+
+.main {
+    min-height: 100vh;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
