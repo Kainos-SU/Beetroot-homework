@@ -51,6 +51,7 @@ a:active {
 .header__links:first-child {
     margin-right: 80px;
     vertical-align: bottom;
+     text-decoration: none;
 }
 
 .header__links__logo {
