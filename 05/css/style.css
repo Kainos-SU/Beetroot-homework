@@ -78,3 +78,15 @@ body {
     color: #19c8fa;
 }
 
+.homework {
+    margin: auto;
+    width: 50%;
+}
+
+.homework__list {
+    list-style: none;
+}
+
+.homework__list li {
+    text-align: center;
+}

@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration-color: transparent;
+    transition: all .25s;
+}
+
+a:hover {
+    text-decoration-color: currentColor;
+}
+
+a:active {
+    color: red;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.header {
+    position: absolute;
+    padding: 50px 74px 0 74px;
+    top: 0;
+    right: 0;
+    left: 0;
+    /* outline: 5px solid red;
+    border: 5px solid green; */
+}
+
+.clear-floats::after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.header__logo {
+    float: left;
+    width: 94px;
+    height: 94px;
+    margin-top: -32px;
+}
+
+.header__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*
+font-family: 'Raleway', sans-serif;
+ */
+.header__nav {
+    float: right;
+    font-family: 'Poiret One', cursive;
+}
+
+.nav__link{
+    margin-right: 28px;
+    color: #000;
+    line-height: 19.41px;
+    font-size: 15px;
+}
+
+.main {
+    min-height: 100vh;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.description {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 120px 74px 74px;
+}
+
+.description__heading {
+    font-size: 48px;
+    line-height: 54px;
+    margin-bottom: 35px;
+}
+
+.description__body__table {
+    width: 350px;
+    margin-bottom: 35px;
+}
+
+.description__body__table tr td:first-child {
+    opacity: 0.6;
+}
+
+.description__body__table tr td:last-child {
+    font-weight: 700;
+}
+
+.btn {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border: none;
+    background-color: #EA7B15;
+    color: #fff;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.btn:hover {
+    background-color: #e98020;
+}
+
+.btn:active {
+    background-color: #ffae62;
+    color: #9f9f9f;
+}
+
+.description__controls a {
+    color: #fff;
+    margin-left: 40px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 19px;
+
+}
