@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3b3f45;
+    font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif;
+}
+
+.wrapper {
+    border: 23px solid #fff;
+    max-width: 1240px;
+    width: 90%;
+    margin: auto;
+}
+
+.header {
+    height: 120px;
+    background-color: #4a4f56;
+    padding-top: 30px;
+    padding-bottom: 22px;
+    text-align: center;
+    color: #eb7e7f;
+}
+
+.header h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 17px;
+}
+
+/* 
+main font: #f9f9ea
+secindary font: #cdcbcb
+bgc odd: #88839e
+bgc even: #7a7593
+bgc hover: #625e77
+ */
+
+.list {
+    padding: 40px 196px 100px; 
+}
+
+.shoping-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.shoping-list li {
+    background-color: #88839e;
+}
+
+.shoping-list li:nth-child(2n) {
+    background-color: #7a7593;
+}
+
+.shoping-list label {
+    display: block;
+    height: 65px;
+    line-height: 65px;
+    padding-left: 15px;
+    font-size: 20px;
+    color: #f9f9ea;
+    transition: background-color,border .1s ease-in;
+}
+
+.shoping-list label:hover {
+    box-sizing: content-box;
+    background-color: #625e77;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+
+.shoping-list [name^=element] {
+    margin-right: 20px;
+    transform: scale(1.5);
+}
+
+#submit_form {
+    padding: 26px  0;
+    border: none;
+    width: 100%;
+    background-color: #4a4f56;
+    color: #eb7e7f;
+    font-size: 20px;
+    transition: background-color .1s ease-in;
+}
+
+#submit_form:hover {
+    background-color: #eb7678;
+    color: #3a2424;
+}
+
+#submit_form:active {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.elements-text sub{
+    color: #c0cbd6;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.shoping-list input:checked + span {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: #a3a0b5;
+}
+
+.shoping-list input:checked + span sub {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: #a3a0b5;
+}

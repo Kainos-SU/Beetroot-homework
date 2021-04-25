@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Diner Shoping List</title>
+    <!-- 
+        Додаю favicon - іконки у вкладці
+     -->
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header">
+                <h1>
+                    CSS Diner Shopping List
+                </h1>
+                <h2>
+                    Let's go to the mall!
+                </h2>
+            </div>
+        </header>
+        <section class="list">
+            <form method="GET" action="#" name="shoping_list">
+                <ul class="shoping-list">
+                    <li>
+                        <label>
+                            <input type="checkbox" name="element[]" value="0">
+                            <span class="elements-text">A lot of pickles <sub>for the next lessons about CSS</sub></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="element[]" value="1">
+                            <span class="elements-text">10 apples <sub>for more CSS manipulations</sub></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="element[]" value="2">
+                            <span class="elements-text">20 oranges <sub>because they are awesome</sub></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="element[]" value="3">
+                            <span class="elements-text">13 plates <sub>hm... they always disappear</sub></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" name="element[]" value="4">
+                            <span class="elements-text">15 bentos</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" id="element5" name="element[]" value="5">
+                            <span class="elements-text">1 bottle os Sake ^_^ <sub>for my friends</sub></span>
+                        </label>
+                    </li>
+                </ul>
+
+                <button type="submit" id="submit_form">
+                    Bon appetit :)
+                </button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
