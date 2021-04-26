@@ -61,12 +61,11 @@ bgc hover: #625e77
 
 .shoping-list label {
     display: block;
-    height: 65px;
-    line-height: 65px;
-    padding-left: 15px;
+    /*min-height: 65px;*/
+    padding: 20px 0 20px 15px;
     font-size: 20px;
     color: #f9f9ea;
-    transition: background-color,border .1s ease-in;
+    transition: background-color .2s ease-in;
 }
 
 .shoping-list label:hover {
@@ -74,6 +73,10 @@ bgc hover: #625e77
     background-color: #625e77;
     border-top: 4px solid #fff;
     border-bottom: 4px solid #fff;
+}
+
+.shoping-list label:active {
+    background-color: #f00;
 }
 
 .shoping-list [name^=element] {
@@ -107,13 +110,21 @@ bgc hover: #625e77
     vertical-align: middle;
 }
 
-.shoping-list input:checked + span {
+.elements-text sub::before {
+    content: "(";
+}
+
+.elements-text sub::after {
+    content: ")";
+}
+
+.shoping-list [name^=element]:checked + span {
     text-decoration: line-through;
     text-decoration-thickness: 2px;
     color: #a3a0b5;
 }
 
-.shoping-list input:checked + span sub {
+.shoping-list [name^=element]:checked + span sub {
     text-decoration: line-through;
     text-decoration-thickness: 2px;
     color: #a3a0b5;
