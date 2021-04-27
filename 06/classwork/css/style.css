@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 56px;
+}
+
+.element {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding-left:45px;
+    padding-right: 45px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+
+.title {
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom:15px;
+}
+
+.content {
+    opacity: .5;
+}
+
+.circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #2a69a6;
+    margin: 0 auto 15px;
+    border: 1px solid #2a69a6;
+    transition: all .2s;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    letter-spacing: unset;
+}
+
+.left{
+    float: left;
+}
+
+.float-wrapper {
+    float: right;
+    width: 245px;
+}
+
+.circle span {
+    font-size: 32px;
+    line-height: 63px;
+    margin-right: -2px;
+}
+
+.circle:hover {
+    background-color: #fff;
+    color: #2a69a6;
+    border-radius: 10%;
+}
+
+/* .circle.tablet {
+    background-image: url("../img/Tablet.png");
+}
+
+.circle.setings {
+    background-image: url("../img/Settings.png");
+}
+
+.circle.dashboard {
+    background-image: url("../img/Dashboard.png");
+} */
+
+@media (min-width: 800px) {
+    .element {
+        width: 33.3%;
+    }
+}

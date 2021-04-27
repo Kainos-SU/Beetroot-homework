@@ -1,0 +1,12 @@
+.icon {
+    width: 64px;
+    height: 64px;
+    background-image: url(../img/sprites.png);
+    background-position: 0px -86px;
+    transition: all ease .25s;
+}
+
+.icon:hover {
+    background-color: rgb(115, 220, 247);
+    background-position-y:0px;
+}

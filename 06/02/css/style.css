@@ -53,6 +53,7 @@ bgc hover: #625e77
 
 .shoping-list li {
     background-color: #88839e;
+    vertical-align: middle;
 }
 
 .shoping-list li:nth-child(2n) {
@@ -103,28 +104,32 @@ bgc hover: #625e77
     color: #000000;
 }
 
-.elements-text sub{
+.elements-text {
+    line-height: 1;
+}
+
+.elements-text small{
     color: #c0cbd6;
     font-size: 12px;
     vertical-align: middle;
 }
 
-.elements-text sub::before {
+.elements-text small::before {
     content: "(";
 }
 
-.elements-text sub::after {
+.elements-text small::after {
     content: ")";
 }
 
 .shoping-list [name^=element]:checked + span {
-    text-decoration: line-through;
-    text-decoration-thickness: 2px;
     color: #a3a0b5;
+    background-image: linear-gradient(to left, #a3a0b5, #a3a0b5);
+    background-repeat: no-repeat;
+    background-position: 0 0.5em;
+    background-size: 100% 2px;
 }
 
-.shoping-list [name^=element]:checked + span sub {
-    text-decoration: line-through;
-    text-decoration-thickness: 2px;
+.shoping-list [name^=element]:checked + span small {
     color: #a3a0b5;
 }
