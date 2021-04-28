@@ -11,7 +11,7 @@
   border: 24px solid #2b81ac;
   background-color: #3399cc;
   margin: 0 auto;
-  padding: 31px 217px 138px;
+  padding: 31px calc(217 / 1465 *100%) 138px;
 }
 
 .title {
@@ -111,7 +111,16 @@
 }
 
 @media screen and (max-width: 750px) {
-  .weather-block:not(.sydney){
+  .weather-block {
     width: 50%;
   }
+  .sydney {
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+    .weather-block {
+        width: 100%;
+    }
 }
