@@ -38,6 +38,7 @@
   border: 3px solid #fff;
   text-align: center;
   transition: opacity linear .25s;
+  cursor: pointer;
 }
 
 .weather-block i.wi {
