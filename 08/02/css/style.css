@@ -1,0 +1,104 @@
+/* 
+HansKedrick Medium
+HansKedrick Heavy
+1240px
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e2e7ec;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 90%;
+}
+
+.wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 90px 0 100px;
+}
+
+.title-card {
+    background-color: transparent;
+    padding: 405px 260px 40px 44px;
+    color: #fff;
+    flex: 0 1 calc(740 / 1120 * 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 0 0 20px;
+    border: 1px dotted black;
+}
+
+.title-card__date {
+    margin-bottom: 25px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.title-card__title {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.title-card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.title-card__image img{
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    flex: 0 1 calc(360 / 1120 * 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 0 20px;
+    padding-bottom: 25px;
+}
+
+.card__image img {
+    width: 100%;
+}
+
+.card__image {
+    margin-bottom: 30px;
+}
+
+.card__date {
+    margin-bottom: 22px;
+}
+
+.card__title {
+    margin-bottom: 70px;
+}
+
+
+
+
+
+.loader {
+    flex: 1 1 100%;
+}
