@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #fdde7e;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1140px;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    font-family: "MisoRU", sans-serif;
+}
+
+.card {
+    width: calc(360 / 1140 * 100%);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 440px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 20%);
+}
+
+.bigger {
+    height: 500px;
+    padding-top: 35px;
+}
+
+.bigger .price {
+    margin-bottom: 25px;
+}
+
+.bigger .title {
+    margin-bottom: 35px;
+}
+
+.bigger .image {
+    margin-bottom: 37px;
+}
+
+.image {
+    height: 140px;
+    width: 139px;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+}
+
+.bronze {
+    background-position-x: 5px;
+}
+
+.gold {
+    background-position-x: -135px;
+}
+
+.silver {
+    background-position-x: -274px;
+}
+
+.price {
+    font-size: 70px;
+    color: #02995b;
+    /* margin-bottom: 25px; */
+}
+
+.title {
+    font-size: 56px;
+    margin-bottom: 25px;
+}
+
+.description {
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    width: 145px;
+    text-align: center;
+}

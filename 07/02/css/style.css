@@ -110,7 +110,7 @@
   color: #fff;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1010px) {
   .weather-block {
     width: 50%;
   }
@@ -119,7 +119,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 750px) {
     .weather-block {
         width: 100%;
     }
