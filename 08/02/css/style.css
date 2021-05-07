@@ -4,13 +4,22 @@ HansKedrick Heavy
 1240px
  */
 
- @font-face {font-family: "HansKendrick-Regular";
+@font-face {font-family: "HansKendrick-Regular";
     src: url("../fonts/HansKendrick-Regular.eot"); /* IE9*/
     src: url("../fonts/HansKendrick-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     url("../fonts/HansKendrick-Regular.woff2") format("woff2"), /* chrome、firefox */
     url("../fonts/HansKendrick-Regular.woff") format("woff"), /* chrome、firefox */
     url("../fonts/HansKendrick-Regular.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  }
+}
+
+@keyframes lds-spinner{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 * {
   margin: 0;
@@ -151,10 +160,74 @@ body {
     bottom: 25px;
 }
 
-
-
-
-
 .loader {
     flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader .image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.loader .image div {
+    transform-origin: 15px 15px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+
+.loader .image div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 13px;
+    width: 4px;
+    height: 8px;
+    border-radius: 20%;
+    background-color: #99a5b0;
+}
+
+.loader .image div:nth-child(2) {
+    transform: rotate(45deg);
+    animation-delay: 0.15s;
+}
+
+.loader .image div:nth-child(3) {
+    transform: rotate(90deg);
+    animation-delay: 0.30s;
+}
+
+.loader .image div:nth-child(4) {
+    transform: rotate(135deg);
+    animation-delay: 0.45s;
+}
+
+.loader .image div:nth-child(5) {
+    transform: rotate(180deg);
+    animation-delay: 0.60s;
+}
+
+.loader .image div:nth-child(6) {
+    transform: rotate(225deg);
+    animation-delay: 0.75s;
+}
+
+.loader .image div:nth-child(7) {
+    transform: rotate(270deg);
+    animation-delay: 0.90s;
+}
+
+.loader .image div:nth-child(8) {
+    transform: rotate(315deg);
+    animation-delay: 1.05s;
+}
+
+.loader .text {
+    font-size: 13px;
+    font-weight: 800;
+    color: #99a5b0;
+    text-transform: uppercase;
 }
