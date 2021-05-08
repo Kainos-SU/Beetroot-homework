@@ -19,7 +19,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    width: 875px;
+    max-width: 875px;
+    width: 100%;
     padding: 50px 0 50px 60px;
     background-color: #000;
 }
@@ -50,8 +51,10 @@ body {
     background-color: #f0b82b;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     color: #fff;
-    width: 812px;
+    max-width: 812px;
+    width: 100%;
     padding: 20px 0 20px 35px;
 }
 
@@ -82,19 +85,20 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     box-shadow: 0 0 15px 1px black;
-    width: 1100px;
+    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
     margin-top: -160px;
 }
 
 .text-editor__separator {
-    flex: 0 1 70px;
+    flex: 0 1 calc(70 / 1100 * 100%);
     border-right: 2px solid rgba(0,0,0,0.3);
 }
 
 .text-editor__workspace {
     padding: 200px 130px 0 55px;
-    flex: 0 1 calc(1100px - 70px);
+    flex: 0 1 calc((1100 - 70px) / 1100 * 100%);
     font-family: "Georgia", 'Times New Roman', "Century Schoolbook L", Times, serif;
 }
 
