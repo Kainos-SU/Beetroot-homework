@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'FuturaPT';
+	src: url('../fonts/FuturaPT.eot');
+	src: url('../fonts/FuturaPT.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/FuturaPT.woff2') format('woff2'),
+	     url('../fonts/FuturaPT.woff') format('woff'),
+	     url('../fonts/FuturaPT.ttf') format('truetype');
+	font-weight: 900;
+    font-display: swap;
+	font-style: normal;
+}

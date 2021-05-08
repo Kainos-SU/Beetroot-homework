@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #464f54;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 875px;
+    padding: 50px 0 50px 60px;
+    background-color: #000;
+}
+
+.header__input__title h6 {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "ProximaNova", sans-serif;
+    font-size: 15px;
+    opacity: .5;
+    letter-spacing: 0.3em;
+    margin-bottom: 15px;
+}
+
+.title__input {
+    background-color: transparent;
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid rgba(255,255,255, .5);
+    outline: none;
+}
+
+.nav__control {
+    font-size: 32px;
+    background-color: #f0b82b;
+    display: flex;
+    justify-content: flex-start;
+    color: #fff;
+    width: 812px;
+    padding: 20px 0 20px 35px;
+}
+
+.nav__control label:first-child span{
+    text-decoration: underline;
+    text-decoration-thickness: 8px;
+}
+
+.nav__control input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.nav__control span {
+    opacity: 0.5;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.nav__control input:checked+span {
+    opacity: 1;
+}
+
+.text-editor {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-shadow: 0 0 15px 1px black;
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: -160px;
+}
+
+.text-editor__separator {
+    flex: 0 1 70px;
+    border-right: 2px solid rgba(0,0,0,0.3);
+}
+
+.text-editor__workspace {
+    padding: 200px 130px 0 55px;
+    flex: 0 1 calc(1100px - 70px);
+    font-family: "Georgia", 'Times New Roman', "Century Schoolbook L", Times, serif;
+}
+
+
+.text-editor__author {
+    font-family: "ProximaNova", sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.175em;
+    word-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 18px;
+}
+
+.text-editor__title {
+    font-family: "FuturaPT", sans-serif;
+    font-size: 78px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.053em;
+    margin-bottom: -4px;
+}
+
+.text-editor__quote {
+    font-style: italic;
+    font-size: 30px;
+    opacity: 0.5;
+    margin-bottom: 50px;
+}
+
+.text-editor__main-text {
+    font-size: 27px;
+    margin-bottom: 23px;
+    line-height: 1.5em;
+}
+
+.text-editor__main-text em {
+    font-style: italic;
+}
