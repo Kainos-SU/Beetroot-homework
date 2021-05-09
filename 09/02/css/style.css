@@ -92,13 +92,13 @@ body {
 }
 
 .text-editor__separator {
-    flex: 0 1 calc(70 / 1100 * 100%);
+    flex: 0 1 70px;
     border-right: 2px solid rgba(0,0,0,0.3);
 }
 
 .text-editor__workspace {
     padding: 200px 130px 0 55px;
-    flex: 0 1 calc((1100 - 70px) / 1100 * 100%);
+    flex: 0 1 calc(1100px - 70px);
     font-family: "Georgia", 'Times New Roman', "Century Schoolbook L", Times, serif;
 }
 
