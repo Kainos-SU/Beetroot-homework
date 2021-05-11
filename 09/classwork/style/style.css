@@ -1,0 +1,28 @@
+/* 
+font-family: 'Itim', cursive;
+font-family: 'Roboto', sans-serif;
+ */
+
+ @font-face {
+     font-family: "InverkrugOutline";
+     src: local("InverkrugOutline"),
+        url("../fonts/inverkrugoutline-webfont.woff2") format("woff2"),
+        url("../fonts/inverkrugoutline-webfont.woff") format("woff");
+
+    font-weight: 400;
+    font-display: block;
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+ }
+
+ body {
+     font-family: 'Roboto', sans-serif;
+ }
+
+ h1 {
+    font-family: "InverkrugOutline", sans-serif;
+    font-size: 50px;
+ }
