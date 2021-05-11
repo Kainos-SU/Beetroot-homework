@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    color: #fff;
+    min-width: 400px;
+    max-width: 900px;
+    min-height: 450px;
+    background-image: url("https://i.pinimg.com/originals/53/aa/f6/53aaf6011bba6d6bb0499e1eef12c26d.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 100px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card__description {
+    padding: 30px;
+    font-size: 24px;
+    line-height: 150%;
+    background: linear-gradient(0deg, black, transparent);
+}
+
+.card__date {
+    font-size: 32px;
+    background-color: rgba(255, 255, 255, 0.15);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 15px;
+    border-radius: 4px;
+}
