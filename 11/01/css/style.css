@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --maket-width: 1500px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+body{
+    font-family: "Raleway", sans-serif;
+}
+
+.title {
+    font-size: 90px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+    /* line-height: 25px; */
+}
+
+.btn {
+    max-width: 200px;
+    width: 100%;
+    height: 55px;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    line-height: 55px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: #ff6033;
+    box-shadow: 0px 5px 30px -10px rgba(0,0,0,.5);
+    transition: transform .3s;
+}
+
+.btn:hover {
+    transform: scale(1.35);
+}
+
+.header {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.header__wrapper {
+    max-width: 1170px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 1 550px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    width: calc(600 / var(--maket-width) * 100%);
+}
+
+.header__item {
+    width: max-content;
+    margin: 10px 10px;
+    text-align: center;
+}
+
+.header__anchor {
+    font-size: 16px;
+    color: #000;
+    text-decoration: overline;
+    text-decoration-color: transparent;
+    font-weight: bold;
+    line-height: 25px;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+
+.header__anchor:hover {
+    text-decoration-color: #ff6033;
+}
+
+.title-section {
+    padding: 360px 0px 400px;
+    background-image: url("../img/strawberry.jpg");
+    background-size: contain;
+    background-position: bottom right -10%;
+    background-repeat: no-repeat;
+    background-color: #f9f8fb;
+    position: relative;
+}
+
+.title-section__wrapper {
+    max-width: 1170px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.title-section__text-box {
+    max-width: 380px;
+    width: 90%;
+}
+
+.title-section__title {
+    color: #000;
+    font-size: 60px;
+    font-weight: 900;
+    margin-bottom: 35px;
+}
+
+.title-section__description {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 36px;
+}
+
+.title-section__scroll {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.about-section {
+    width: 100%;
+    padding: 170px 0;
+    background-image: url("../img/cup.png");
+    background-position: bottom 30% left 0%;
+    background-color: #00bebe;
+    background-repeat: no-repeat;
+}
+
+.about-section__wrapper {
+    max-width: 1170px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+.about-section__description {
+    max-width: 500px;
+    width: 100%;
+}
+
+.about-section__title {
+    margin-bottom: 35px;
+}
+
+.about-section__text {
+    color: #fff;
+    margin-bottom: 25px;
+}
