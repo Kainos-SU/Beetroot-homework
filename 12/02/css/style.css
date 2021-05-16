@@ -1,0 +1,130 @@
+/* 
+#3023ae
+#c86dd7
+58deg
+background: rgb(48,35,174);
+background: linear-gradient(58deg, rgba(48,35,174,1) 0%, rgba(200,109,215,1) 100%);
+background-blend-mode
+ */
+
+body {
+    background-color: #e5eeee;
+    font-family: 'Quicksand', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.modal-sign-in {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 90%;
+    padding: 50px 0 50px;
+
+    /* height: 495px; */
+
+    background-image: linear-gradient(
+                        58deg, 
+                        rgba(48,35,174,.95) 0%,
+                        rgba(200,109,215,.95) 100%),
+                    url("../img/bridge.jpg");
+    background-position: bottom 80% right 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-blend-mode: soft-light; */
+}
+
+.modal-sign-in__container {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.modal-sign-in__choise {
+    width: 100%;
+}
+
+.modal-sign-in__join-or-sign {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modal-sign-in__options {
+    margin-right: 25px;
+    opacity: .5;
+}
+
+.modal-sign-in__options--active {
+    border-bottom: 2px solid #e66a64;
+    opacity: .95;
+}
+
+.modal-sign-in__anchors {
+    font-size: 18px;
+    font-weight:  700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.modal-sign-in__sign-in {
+    padding-top: 50px;
+}
+
+.modal-sign-in__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.modal-sign-in__item {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+
+.modal-sign-in--hidden {
+    display: none;
+}
+
+.modal-input-checkbox {
+    margin-bottom: 41px;
+}
+
+.modal-input-btn {
+    margin-bottom: 30px;
+}
+
+.modal-sign-in__sublist {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.modal-sign-in__help-link {
+    position: relative;
+    color: #fff;
+    opacity: .5;
+    text-decoration: none;
+}
+
+.modal-sign-in__help-link::after {
+    transition: all .15s;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: .5;
+}
+
+.modal-sign-in__sublist:hover :not(.modal-sign-in__help-link:hover)::after {
+    top: 20px;
+    background-color: transparent;
+}

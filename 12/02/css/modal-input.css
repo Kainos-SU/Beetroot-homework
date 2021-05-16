@@ -1,0 +1,110 @@
+:root {
+    --input-height: 42px;
+}
+
+.modal-input__title {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.modal-input__input,
+.modal-input-btn {
+    display: block;
+    background: transparent;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-radius: 0;
+    line-height: calc(var(--input-height) - 4px);
+    font-size: 16px;
+    color: #fff;
+    padding: 0 10px;
+}
+
+.modal-input__input:focus-visible {
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-radius: 0;
+    outline: 1px solid rgba(34, 235, 16, 0.829)
+}
+
+.modal-input__input:valid {
+    background-color: rgba(0, 200, 50, 0.25);
+    border: 2px solid rgba(0, 255, 0, .4);
+}
+
+.modal-input__input:invalid {
+    border: 2px solid #f00;
+}
+
+.modal-input__input:invalid+.modal-input__hint{
+    color: #f00;
+    font-size: 10px;
+    opacity: 1;
+}
+
+.modal-input__hint {
+    opacity: 0;
+    line-height: 10px;
+    font-weight: 400;
+}
+
+.modal-input-checkbox__label {
+    display: flex;
+    align-items: center;
+}
+
+.modal-input-checkbox__title,
+.modal-input__checked {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    transition: all .25s;
+}
+
+.modal-input-checkbox__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.modal-input__checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    font-size: 0;
+    border: 2px solid #23ae92;
+    background-color: #23ae92;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.modal-input__checked:hover {
+    background-color: #e66a64;
+}
+
+.modal-input-checkbox__input:checked + .modal-input__checked {
+    font-size: 12px;
+}
+
+.modal-input-btn {
+    border: 2px solid #23ae92;
+    border-radius: 0;
+    background-color: #23ae92;
+    font-size: 18tpx;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+}
+
+.modal-input-btn:hover {
+    border: 2px solid #e66a64;
+}
+
+.modal-input-btn:active {
+    background-color: #e66a64;
+}

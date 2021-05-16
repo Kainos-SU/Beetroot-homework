@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modal-input.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sign in form</title>
+</head>
+
+<body>
+    <div class="modal-sign-in">
+        <div class="modal-sign-in__container">
+            <div class="modal-sign-in__choise">
+                <ul class="modal-sign-in__join-or-sign">
+                    <li class="modal-sign-in__options modal-sign-in__options--active">
+                        <a href="#" class="modal-sign-in__anchors">
+                            Sign in
+                        </a>
+                    </li>
+                    <li class="modal-sign-in__options">
+                        <a href="#" class="modal-sign-in__anchors">
+                            Join us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-sign-in__sign-in">
+                <form action="#" method="GET" name="sign">
+                    <ul class="modal-sign-in__list">
+                        <li class="modal-sign-in__item">
+                            <div class="modal-input">
+                                <label class="modal-input__label">
+                                    <span class="modal-input__title">
+                                        Username
+                                    </span>
+                                    <input type="text" name="login" class="modal-input__input" required
+                                        pattern="[A-Za-z0-9]+">
+                                    <span class="modal-input__hint">
+                                        Required field
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="modal-sign-in__item">
+                            <div class="modal-input">
+                                <label class="modal-input__label">
+                                    <span class="modal-input__title">
+                                        Password
+                                    </span>
+                                    <input type="password" name="password" class="modal-input__input" required>
+                                    <span class="modal-input__hint">
+                                        err
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="modal-input-checkbox">
+                        <label class="modal-input-checkbox__label">
+                            <input type="checkbox" value="true" name="keep" class="modal-input-checkbox__input">
+                            <span class="modal-input__checked">
+                                &#10004;
+                            </span>
+                            <span class="modal-input-checkbox__title">
+                                Keep me signed in
+                            </span>
+                        </label>
+                    </div>
+                    <button class="modal-input-btn" type="submit">
+                        Sign in
+                    </button>
+                    <ul class="modal-sign-in__sublist">
+                        <li class="modal-sign-in__subitem">
+                            <a href="" class="modal-sign-in__help-link">
+                                Forgot password
+                            </a>
+                        </li>
+                        <li class="modal-sign-in__subitem">
+                            <a href="#" class="modal-sign-in__help-link">
+                                Create an account
+                            </a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="modal-sign-in__join-us modal-sign-in--hidden">
+                <div class="modal-sign-in__sign-in">
+                    <form action="#" method="GET" name="join">
+                        <ul class="modal-sign-in__list">
+                            <li class="modal-sign-in__item">
+                                <div class="modal-input">
+                                    <label class="modal-input__label">
+                                        <span class="modal-input__title">
+                                            Username
+                                        </span>
+                                        <input type="text" class="modal-input__input">
+                                        <span class="modal-input__hint">
+                                            Required field
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="modal-sign-in__item">
+                                <div class="modal-input">
+                                    <label class="modal-input__label">
+                                        <span class="modal-input__title">
+                                            Password
+                                        </span>
+                                        <input type="text" class="modal-input__input">
+                                        <span class="modal-input__hint">
+                                            Required field
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="modal-sign-in__item">
+                                <div class="modal-input">
+                                    <label class="modal-input__label">
+                                        <span class="modal-input__title">
+                                            Repeat password
+                                        </span>
+                                        <input type="text" class="modal-input__input">
+                                        <span class="modal-input__hint">
+                                            Required field
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="modal-sign-in__item">
+                                <button class="modal-input-btn" type="submit">
+                                    Join us
+                                </button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
