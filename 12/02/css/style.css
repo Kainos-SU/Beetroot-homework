@@ -36,6 +36,7 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     /* background-blend-mode: soft-light; */
+    box-shadow: 0 30px 25px -10px rgba(0,0,0,.7);
 }
 
 .modal-sign-in__container {
