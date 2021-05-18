@@ -1,0 +1,60 @@
+/* <style>
+      #layer2 {
+         stroke: #000000;
+         fill: none;
+      }
+
+      #path880,
+      #path880-9,
+      #path880-5 {
+         stroke-width: 0.5;
+         stroke: #000000;
+         fill: #000000;
+      }
+   </style> */
+
+/* .front {
+    stroke: #000000;
+    fill: none;
+}
+
+.front #path880 {
+    stroke-width: 0.5;
+    stroke: #000000;
+    fill: red;
+} */
+
+.logo {
+    fill: none;
+    stroke-width: 2px;
+    fill-rule: evenodd;
+    width: 69px;
+}
+
+.logo__fig1,
+.logo__fig2 {
+    stroke: var(--main_stroke, #ffffff);
+}
+
+.logo__dot1,
+.logo__dot2,
+.logo__dot3 {
+    fill: var(--main_fill, #ffffff);
+}
+
+.logo--dark .logo__fig1,
+.logo--dark .logo__fig2 {
+    --main_stroke: #000000;
+}
+
+.logo--dark .logo__dot1,
+.logo--dark .logo__dot2,
+.logo--dark .logo__dot3 {
+    --main_fill: #000000;
+}
+
+.header__scroll {
+    fill: #fff;
+    fill-rule: evenodd;
+    width: 23px;
+}
