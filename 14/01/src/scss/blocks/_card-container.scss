@@ -1,0 +1,48 @@
+%arrows {
+    font-size: 40px;
+    color: $local-yellow;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 25%;
+    transition: color,border-color,background-color .15s;
+}
+
+%arrows-hover {
+    background-color: $local-yellow;
+    color: #fff;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__left-arrow {
+        @extend %arrows;
+    }
+
+    &__left-arrow:hover {
+        @extend %arrows-hover;
+    }
+
+    &__right-arrow {
+        @extend %arrows;
+    }
+
+    &__right-arrow:hover {
+        @extend %arrows-hover;
+    }
+
+    &__viewer {
+        max-width: 1005px;
+        width: 1005px / $container-width * 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    // &__card {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
+}

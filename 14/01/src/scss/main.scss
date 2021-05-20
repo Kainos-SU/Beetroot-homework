@@ -1,0 +1,11 @@
+@import "reset";
+
+@import "variables";
+
+@import "container";
+
+@import "./blocks/blocks.scss";
+
+body {
+    font-family: sans-serif;
+}
