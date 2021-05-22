@@ -1,0 +1,46 @@
+.subscribe-section {
+    padding: 140px 0 160px;
+    background-color: #fff;
+    background-image: url("../img/subscribe/some_berrys_idk.jpg");
+    background-repeat: no-repeat;
+    background-position: center right 10%;
+    background-size: auto;
+
+    &__title {
+        font-size: 40px;
+        color: #000;
+        margin-bottom: 35px;
+    }
+
+    &__description {
+        font-size: 17px;
+        line-height: 27px;
+        font-weight: 300;
+        max-width: 570px;
+        width:100%;
+        margin-bottom: 35px;
+    }
+
+    &__subscribe-form {
+        max-width: 770px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__email {
+        max-width: 570px;
+        width: 570 / 770 * 100%;
+        flex: 1 1 auto;
+        font-size: 15px;
+        font-weight: 300;
+        padding: 0 1em;
+    }
+
+    &__btn {
+        font-weight: 300;
+        background-color: #96b92c;
+        max-width: 170px;
+        width: 170 / 770 * 100%;
+    }
+}

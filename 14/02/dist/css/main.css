@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1170px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn {
+  max-width: 200px;
+  border: none;
+  width: 100%;
+  height: 55px;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  line-height: 55px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #ff6033;
+  box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.35);
+}
+
+.title {
+  font-size: 90px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #fff;
+  /* line-height: 25px; */
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+.gallery__tile {
+  width: 48.7179487179%;
+  margin-bottom: 30px;
+}
+.gallery__img {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.8);
+}
+.gallery__tile--large {
+  width: calc((100% / 3) * 2 - 15px);
+}
+.gallery__tile--small-groop {
+  width: calc(100% / 3 - 15px);
+  align-self: stretch;
+  display: flex;
+  margin-bottom: 30px;
+}
+.gallery__tile-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+}
+.gallery__tile--full {
+  flex: 0 1 100%;
+  margin-bottom: 0;
+}
+
+.gallery-section {
+  background-color: #ffe92f;
+  padding: 100px 0 120px;
+}
+.gallery-section__title {
+  text-align: center;
+  color: #000;
+  margin-bottom: 25px;
+}
+.gallery-section__description {
+  max-width: 570px;
+  width: 90%;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 27px;
+  margin: 0 auto 50px;
+}
+.gallery-section__gallery {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.gallery-section__btn {
+  box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.8);
+  background-color: #5585a2;
+  margin: 0 auto;
+}
+
+.subscribe-section {
+  padding: 140px 0 160px;
+  background-color: #fff;
+  background-image: url("../img/subscribe/some_berrys_idk.jpg");
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+  background-size: auto;
+}
+.subscribe-section__title {
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 35px;
+}
+.subscribe-section__description {
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 300;
+  max-width: 570px;
+  width: 100%;
+  margin-bottom: 35px;
+}
+.subscribe-section__subscribe-form {
+  max-width: 770px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.subscribe-section__email {
+  max-width: 570px;
+  width: 74.025974026%;
+  flex: 1 1 auto;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0 1em;
+}
+.subscribe-section__btn {
+  font-weight: 300;
+  background-color: #96b92c;
+  max-width: 170px;
+  width: 22.0779220779%;
+}
+
+/*# sourceMappingURL=main.css.map */

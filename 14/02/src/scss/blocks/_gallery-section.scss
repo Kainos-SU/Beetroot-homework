@@ -1,0 +1,30 @@
+.gallery-section {
+    background-color: #ffe92f;
+    padding: 100px 0 120px;
+
+    &__title {
+        text-align: center;
+        color: #000;
+        margin-bottom: 25px;
+    }
+
+    &__description {
+        max-width: 570px;
+        width: 90%;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 27px;
+        margin: 0 auto 50px;
+    }
+
+    &__gallery {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    &__btn {
+        box-shadow: 0px 5px 30px -10px rgba(0,0,0,.8);
+        background-color: #5585a2;
+        margin: 0 auto;
+    }
+}
