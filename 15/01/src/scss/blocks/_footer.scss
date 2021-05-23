@@ -7,10 +7,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media screen and (max-width: 720px) {
+            flex-direction: column;
+        }
     }
 
     &__copy {
         opacity: 0.5;
+        
+        @media screen and (max-width: 720px) {
+            margin-bottom: 0.5rem;
+        }
     }
 
     &__regular-text {
@@ -28,5 +36,9 @@
         font-style: italic;
         text-transform: capitalize;
         opacity: 0.75;
+
+        @media screen and (max-width: 720px) {
+            margin-bottom: 0.5rem;
+        }
     }
 }

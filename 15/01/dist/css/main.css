@@ -576,8 +576,18 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 720px) {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+}
 .footer__copy {
   opacity: 0.5;
+}
+@media screen and (max-width: 720px) {
+  .footer__copy {
+    margin-bottom: 0.5rem;
+  }
 }
 .footer__regular-text {
   opacity: 0.5;
@@ -592,6 +602,11 @@ ul {
   font-style: italic;
   text-transform: capitalize;
   opacity: 0.75;
+}
+@media screen and (max-width: 720px) {
+  .footer__logo {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
