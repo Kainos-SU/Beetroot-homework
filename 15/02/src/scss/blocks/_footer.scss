@@ -1,0 +1,16 @@
+.footer {
+    text-align: center;
+    vertical-align: middle;
+    padding: 4rem 0;
+
+    &__logo {
+        transform-origin: center;
+        width: 2rem;
+        transform: translate(0, 45%);
+        margin-right: 2rem;
+    }
+
+    &__text {
+        font-size: 14 / 16 * 1rem;
+    }
+}

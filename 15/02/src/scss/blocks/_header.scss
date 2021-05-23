@@ -1,0 +1,41 @@
+.header {
+    background-image: url("../img/hero-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    padding: 285 / 16 * 1rem 0 115 / 16 * 1rem;
+
+    &__logo {
+        display: block;
+        width: 69 / 16 * 1rem;
+        margin: 0 auto;
+        margin-bottom: 95 / 16 * 1rem;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        max-width: 600px;
+        width: 90%;
+        font-size: 3.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 auto 50 / 16 * 1rem;
+        color: #fff;
+    }
+
+    &__description {
+        text-transform: uppercase;
+        max-width: 600px;
+        width: 90%;
+        margin: 0 auto 245 / 16 * 1rem;
+        font-size: 15/16*1rem;
+        color: #fff;
+        line-height: 29/16*1rem;
+        text-align: center;
+    }
+
+    &__scroll {
+        display: block;
+        margin: 0 auto;
+    }
+}

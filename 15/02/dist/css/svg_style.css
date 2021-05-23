@@ -1,0 +1,55 @@
+.logo {
+    fill: none;
+    stroke-width: 2px;
+    fill-rule: evenodd;
+}
+
+.logo__fig1,
+.logo__fig2 {
+    stroke: var(--main_stroke, #ffffff);
+}
+
+.logo__dot1,
+.logo__dot2,
+.logo__dot3 {
+    fill: var(--main_fill, #ffffff);
+}
+
+.logo--dark .logo__fig1,
+.logo--dark .logo__fig2 {
+    --main_stroke: #000000;
+}
+
+.logo--dark .logo__dot1,
+.logo--dark .logo__dot2,
+.logo--dark .logo__dot3 {
+    --main_fill: #000000;
+}
+
+.header__scroll {
+    fill: #fff;
+    fill-rule: evenodd;
+    width: 23px;
+}
+
+.section-we-do__icon {
+    width: 85px;
+    fill: var(--main-color-svg, #3c3c3c);
+    display: block;
+    margin: 0 auto 42px;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.section-we-do__icon--console {
+    fill: var(--main-color-svg);
+    stroke: var(--main-color-svg);
+}
+
+.section-we-do__icon--console .section-we-do__icon-symbol3 {
+    fill: none;
+}
+
+.section-we-do__icon:hover {
+    --main-color-svg: #87ceeb;
+}

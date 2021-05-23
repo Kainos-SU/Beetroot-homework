@@ -1,0 +1,15 @@
+.section-services {
+    background-image: url("../img/services.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8.2rem 0 6.8rem;
+
+    &__title {
+        margin-bottom: 60 / 16 * 1rem;
+    }
+
+    &__description {
+        margin-bottom: 0;
+    }
+}

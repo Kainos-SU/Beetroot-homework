@@ -1,0 +1,32 @@
+.section-contact {
+    padding: 140 / 16 * 1rem 0 0;
+
+    &__title {
+        margin-bottom: 4rem;
+    }
+
+    &__description {
+        margin-bottom: 45/16*1rem;
+    }
+
+    &__btn {
+        display: block;
+        max-width: 350px;
+        width: 90%;
+        margin: 0 auto 50/16*1rem;
+        line-height: 60 / 16 * 1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        background-color: $main-color;
+        border-radius: 0;
+        border: none;
+        transition: background-color,color .25s;
+
+        &:hover {
+            background-color: $hover-color;
+            color: $main-color;
+        }
+    }
+}
