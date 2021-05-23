@@ -1,0 +1,89 @@
+.subscribe-section {
+    padding: 140px 0 160px;
+    background-color: #fff;
+    background-image: url("../img/subscribe/some_berrys_idk.jpg");
+    background-repeat: no-repeat;
+    background-position: center right 10%;
+    background-size: auto;
+
+    @media screen and (max-width: 720px) {
+        background-position: center;
+        background-size: contain;
+    }
+
+    &__title {
+        font-size: 40px;
+        color: #000;
+        margin-bottom: 35px;
+    }
+
+    &__description {
+        font-size: 17px;
+        line-height: 27px;
+        font-weight: 300;
+        margin-bottom: 35px;
+    }
+    
+    &__text-block {
+        max-width: 570px;
+        width:100%;
+        position: relative;
+        z-index: 1;
+    }
+    
+    &__blur {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        
+        @media screen and (max-width: 1140px){
+            background-color: rgba(255,255,255,.5);
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+        }
+    }
+
+    &__subscribe-form {
+        max-width: 770px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 720px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    &__email {
+        max-width: 570px;
+        width: 570 / 770 * 100%;
+        flex: 1 1 auto;
+        font-size: 15px;
+        font-weight: 300;
+        padding: 0 1em;
+
+        @media screen and (max-width: 720px) {
+            line-height: 50 / 16 * 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__btn {
+        font-weight: 300;
+        background-color: $local-green;
+        max-width: 170px;
+        width: 170 / 770 * 100%;
+        cursor: pointer;
+
+        @media screen and (max-width: 720px) {
+            width: 170px;
+        }
+    }
+}

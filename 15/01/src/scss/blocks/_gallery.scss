@@ -1,0 +1,60 @@
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    font-size: 0;
+
+    &__tile {
+        width: calc(50% - 15px);
+        margin-bottom: 30px;
+        box-shadow: 0 5px 10px -5px rgba(0,0,0,.8);
+        transition: box-shadow .2s;
+
+        &:hover {
+            box-shadow: 0 10px 10px -4px rgba(0,0,0,.5);
+        }
+        
+        @media screen and (max-width: 720px) {
+            width: 100%;
+        }
+
+        &--large {
+            width: calc((100% / 3) * 2 - 15px);
+            
+            @media screen and (max-width: 960px) {
+                width: 100%;
+            }
+        }
+        
+        &--small-groop {
+            width: calc(100% / 3 - 15px);
+            align-self: stretch;
+            display: flex;
+            @media screen and (max-width: 960px) {
+                width: 100%;
+            }
+        }
+        
+        &--full {
+            width: 100%;
+            @media screen and (max-width: 960px) and (min-width: 720px) {
+                flex: 0 1 calc(50% - 15px);
+            }
+        }
+    }
+    
+    &__img {
+        width: 100%;
+        object-fit: fill;
+    }
+
+    &__tile-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        align-self: stretch;
+    }
+}

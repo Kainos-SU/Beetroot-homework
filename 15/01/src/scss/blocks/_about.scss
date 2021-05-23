@@ -1,0 +1,57 @@
+.about-section {
+    background-color: $local-lightblue;
+    background-image: url("../img/about/cup.png");
+    background-repeat: no-repeat;
+    background-position: center left 10%;
+    padding: 10rem 0 230 / 16 * 1rem;
+    @media screen and (max-width: 1140px) {
+        background-position: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    
+    &__description {
+        position: relative;
+        z-index: 1;
+        flex: 0 1 500 / 16 * 1rem;
+        color: #fff;
+        @media screen and (max-width: 1140px) {
+            color: #000;
+        }
+    }
+
+    &__blur {
+        display: none;
+        position: absolute;
+        z-index: -1;
+        left: -5%;
+        width: 110%;
+        height: 100%;
+        background-color: rgba(255,255,255, 0.4);
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+        @media screen and (max-width: 1140px) {
+            display: block;
+        }
+        @media screen and (max-width: 540px) {
+            background-image: url("../img/about/cup.png");
+            background-repeat: no-repeat;
+            background-position: center top 35%;
+            background-attachment: scroll;
+        }
+    }
+    
+    &__title {
+        margin-bottom: 0.5rem;
+    }
+
+    &__text {
+        margin-bottom: 0.9rem;
+        line-height: 27 / 16 * 1rem;
+    }
+}

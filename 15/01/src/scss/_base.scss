@@ -1,0 +1,28 @@
+.title {
+    font-size: 5.65rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.btn {
+    max-width: 200px;
+    width: 100%;
+    line-height: 55px;
+    display: block;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    line-height: 55px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: $local-orange;
+    box-shadow: 0px 5px 30px -10px rgba(0,0,0,.5);
+    transition: transform .3s;
+
+    &:hover {
+        transform: scale(1.08);
+    }
+}
