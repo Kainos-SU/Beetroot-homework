@@ -2,22 +2,22 @@
     background-color: $local-blue;
     
     &__content {
-        padding: 180px 0 130px;
+        padding: 180px 0 130px calc(100 / 1170 * 100%);
         display: flex;
         flex-direction: row-reverse;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
-        padding-left: calc(100 / 1170 * 100%);
         background-image: url("../img/services/tomat.png");
         background-repeat: no-repeat;
         background-position: center right;
 
-        @media screen and (max-width: 1140px) {
+        @media screen and (max-width: 960px) {
             // flex-direction: column;
             flex-wrap: wrap;
             justify-content: center;
             background-position: center top;
+            padding-left: 0;
         }
 
         @media screen and (max-width: 540px) {
@@ -29,9 +29,9 @@
         max-width: 400px;
         width: 90%;
 
-        @media screen and (max-width: 1140px) and (min-width: 960px) {
-            max-width: 65%;
-        }
+        // @media screen and (max-width: 1140px) and (min-width: 960px) {
+        //     max-width: 65%;
+        // }
 
         @media screen and (max-width: 960px) and (min-width: 720px) {
             max-width: 100%;
@@ -47,7 +47,7 @@
         padding-bottom: 1.1em;
         margin-left: 3rem;
 
-        @media screen and (max-width: 1140px) {
+        @media screen and (max-width: 960px) {
             margin: 0;
         }
 
