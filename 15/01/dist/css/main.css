@@ -48,6 +48,11 @@ html {
   font-size: 16px;
   font-family: "Raleway", sans-serif;
 }
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 12px;
+  }
+}
 
 ul {
   list-style: none;
@@ -202,6 +207,7 @@ ul {
   font-size: 3.75rem;
   letter-spacing: 0.07rem;
   margin-bottom: 0.9rem;
+  font-weight: 800;
 }
 .title-section__description {
   font-size: 1.0625rem;
@@ -276,6 +282,11 @@ ul {
 .about-section__title {
   margin-bottom: 0.5rem;
 }
+@media screen and (max-width: 540px) {
+  .about-section__title {
+    text-align: center;
+  }
+}
 .about-section__text {
   margin-bottom: 0.9rem;
   line-height: 1.6875rem;
@@ -330,14 +341,9 @@ ul {
     margin: 0;
   }
 }
-@media screen and (max-width: 720px) {
-  .service-section__title {
-    font-size: 4rem;
-  }
-}
 @media screen and (max-width: 540px) {
   .service-section__title {
-    font-size: 3.5rem;
+    text-align: center;
   }
 }
 
@@ -347,7 +353,7 @@ ul {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  min-height: 100px;
+  min-height: 6.25rem;
   box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   transition: all 0.2s;
@@ -389,11 +395,6 @@ ul {
   text-align: center;
   color: #000;
   margin-bottom: 25px;
-}
-@media screen and (max-width: 540px) {
-  .gallery-section__title {
-    font-size: 3.8rem;
-  }
 }
 .gallery-section__description {
   max-width: 570px;
@@ -691,12 +692,115 @@ ul {
   font-size: 0.8125rem;
 }
 
+.contact-section__input-multiline, .contact-section__input-oneline {
+  display: block;
+  width: 100%;
+  background-color: #00c4c4;
+  border: none;
+  opacity: 0.5;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.contact-section__input-multiline:hover, .contact-section__input-oneline:hover {
+  opacity: 0.8;
+}
+
+.contact-section__input-multiline:focus-visible, .contact-section__input-multiline:focus, .contact-section__input-oneline:focus-visible, .contact-section__input-oneline:focus {
+  opacity: 1;
+  border-radius: 0;
+  border: none;
+  border-left: 5px solid #355b82;
+  outline: 1px solid #355b82;
+}
+
 .contact-section {
   background-image: url("../img/contact/contact_bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 100px 0 120px;
+  padding: 6.25rem 0 7.5rem;
+}
+.contact-section__title {
+  text-align: center;
+  margin-bottom: 2.8125rem;
+}
+.contact-section__description {
+  max-width: 370px;
+  margin: 0 auto 3.125rem;
+}
+.contact-section__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 720px) {
+  .contact-section__wrapper {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.contact-section__feedback {
+  max-width: 500px;
+  width: 42.735042735%;
+}
+@media screen and (max-width: 720px) {
+  .contact-section__feedback {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .contact-section__feedback {
+    width: 100%;
+  }
+}
+.contact-section__input-oneline {
+  padding: 0 1.25rem;
+  line-height: 3.125rem;
+}
+.contact-section__input-oneline::placeholder {
+  color: #fff;
+}
+.contact-section__input-multiline {
+  padding: 1.25rem;
+  font-size: 1rem;
+  height: 11.5625rem;
+  overflow-y: scroll;
+  resize: none;
+}
+.contact-section__input-multiline::placeholder {
+  color: #fff;
+  font-size: 1rem;
+}
+.contact-section__btn {
+  background-color: #00c4c4;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 80%;
+  line-height: 3.125rem;
+}
+.contact-section__contacts {
+  max-width: 500px;
+  width: 42.735042735%;
+}
+@media screen and (max-width: 720px) {
+  .contact-section__contacts {
+    width: 100%;
+    text-align: center;
+  }
+}
+.contact-section__contact {
+  text-transform: uppercase;
+  font-style: normal;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+.contact-section__contact-anchor {
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  text-decoration: none;
+  color: #000;
 }
 
 .footer {
@@ -728,6 +832,7 @@ ul {
 .footer__love {
   color: #ff2b58;
   opacity: 1;
+  font-weight: 700;
 }
 .footer__logo {
   font-family: "Pacifico", cursive;

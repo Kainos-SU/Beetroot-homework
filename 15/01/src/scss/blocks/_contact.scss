@@ -1,7 +1,144 @@
+%input-decoration {
+    display: block;
+    width: 100%;
+    background-color: $local-lightblue-inputs;
+    border: none;
+    opacity: 0.5;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+%input-hover {
+    opacity: 0.8;
+}
+
+%input-focus {
+    opacity: 1;
+    border-radius: 0;
+    border: none;
+    border-left: 5px solid $local-darkblue-inputs;
+    outline: 1px solid $local-darkblue-inputs;
+}
+
 .contact-section {
     background-image: url("../img/contact/contact_bg.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 100px 0 120px;
+    padding: 100 / 16 * 1rem 0 120 / 16 * 1rem;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 45 / 16 * 1rem;
+    }
+
+    &__description {
+        max-width: 370px;
+        margin: 0 auto 50 / 16 * 1rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 720px) {
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+
+    &__feedback {
+        max-width: 500px;
+        width: 500px / $container-width * 100%;
+
+        @media screen and (max-width: 720px) {
+            width: 70%;
+        }
+
+        @media screen and (max-width: 540px) {
+            width: 100%;
+        }
+    }
+
+    &__input-oneline {
+        @extend %input-decoration;
+        padding: 0 20 / 16 * 1rem;
+        line-height: 50 / 16 * 1rem;
+
+        &:hover {
+            @extend %input-hover;
+        }
+
+        &:focus {
+            @extend %input-focus; 
+        }
+        
+        &:focus-visible {
+            @extend %input-focus; 
+        }
+
+        &::placeholder {
+            color: #fff;
+        }
+    }
+
+    &__input-multiline {
+        @extend %input-decoration;
+        padding: 20 / 16 * 1rem;
+        font-size: 1rem;
+        height: 185 / 16 * 1rem;
+        overflow-y: scroll;
+        resize: none;
+
+        &:hover {
+            @extend %input-hover;
+        }
+
+        &:focus {
+            @extend %input-focus; 
+        }
+        
+        &:focus-visible {
+            @extend %input-focus; 
+        }
+
+        &::placeholder {
+            color: #fff;
+            font-size: 1rem;
+        }
+    }
+
+    &__btn {
+        background-color: $local-lightblue-inputs;
+        margin: 0 auto;
+        max-width: 500px * 0.8;
+        width: 80%;
+        line-height: 50 / 16 * 1rem;
+    }
+
+    &__contacts {
+        max-width: 500px;
+        width: 500px / $container-width * 100%;
+
+        @media screen and (max-width: 720px) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__contact {
+        text-transform: uppercase;
+        font-style: normal;
+        margin-bottom: 20 / 16 * 1rem;
+        font-weight: 700;
+    }
+    
+    &__contact-anchor {
+        font-weight: 400;
+        text-transform: none;
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
 }

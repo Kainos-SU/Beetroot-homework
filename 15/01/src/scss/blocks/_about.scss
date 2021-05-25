@@ -48,6 +48,10 @@
     
     &__title {
         margin-bottom: 0.5rem;
+
+        @media screen and (max-width: 540px) {
+            text-align: center;
+        }
     }
 
     &__text {
