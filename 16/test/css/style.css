@@ -1,0 +1,146 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bars-color: #fff;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.icon__wrapper {
+	width: 42px;
+	height: 30px;
+}
+
+.icon__bar {
+	width: 100%;
+	height: 30%;
+	margin-bottom: 5%;
+	transition: background-color .2s;
+	background-color: var(--bars-color);
+}
+
+.icon__bar:last-child {
+	margin-bottom: 0;
+}
+
+.header {
+	background-color: #000;
+}
+
+.header__wrapper {
+	display: flex;
+	justify-content: space-between;
+	background-color: #000;
+}
+
+.header__logo {
+	text-transform: uppercase;
+	color: #0f0;
+	font-weight: 700;
+	font-size: 2rem;
+	line-height: 2.5rem;
+	align-self: center;
+	font-family: sans-serif;
+}
+
+.nav-1 {
+	width: 60%;
+	background-color: inherit;
+	position: relative;
+}
+
+.nav-1__icon {
+	padding: 10px;
+	background-color: transparent;
+	transition: background-color .2s;
+	display: none;
+}
+
+.nav-1__icon:hover {
+	background-color: #fff;
+	--bars-color: #0f0;
+}
+
+.nav-1__list {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	list-style: none;
+}
+
+.nav-1__item {
+	flex: 0 1 100%;
+	background-color: #000;
+	border-right: 2px solid #fff;
+}
+
+.nav-1__item:first-child {
+	border-left: 2px solid #fff;
+}
+
+.nav-1__anchor {
+	display: flex;
+	width: 100%;
+	text-transform: uppercase;
+	line-height: 2.5rem;
+	background-color: inherit;
+	align-items: center;
+	justify-content: center;
+	color: #0f0;
+	text-decoration: none;
+	font-weight: 700;
+	font-family: sans-serif;
+}
+
+.nav-1__item:hover .nav-1__anchor {
+	color: #000;
+}
+
+.nav-1__item:hover {
+	background-color: #0f0;
+}
+
+@media screen and (max-width: 720px) {
+	.nav-1__icon {
+		display: block;
+	}
+	
+	.nav-1 {
+		width: 50%;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.nav-1__list {
+		max-height: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		width: 100%;
+		flex-direction: column;
+		border-bottom: 1px solid #fff;
+		transition: all .5s;
+	}
+	
+	/*.nav-1__list--active{
+		display: flex;
+	}*/
+	
+	.nav-1__item {
+		border: none;
+		border-bottom: 1px solid #fff;
+	}
+	
+	.nav-1__item:first-child {
+		border-left: none;
+		border-top: 1px solid #fff;
+	}
+}
