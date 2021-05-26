@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Cache</title>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,7 +16,12 @@
                     <div class="header__logo">
                         <img src="img/header/logo.png" alt="Cache Logo" class="header__img">
                     </div>
-                    <nav class="header__nav anchors-nav">
+                    <nav class="header__nav anchors-nav" id="header_nav">
+                        <div class="anchors-nav__burger burger">
+                            <div class="burger__bar"></div>
+                            <div class="burger__bar"></div>
+                            <div class="burger__bar"></div>
+                        </div>
                         <ul class="anchors-nav__list">
                             <li class="anchors-nav__item">
                                 <a href="#home" class="anchors-nav__anchor">

@@ -105,13 +105,6 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
-@media screen and (max-width: 720px) {
-  .header__wrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-}
 .header__logo {
   margin: 0 2rem 0 0;
   flex: 0 0 auto;
@@ -120,11 +113,6 @@ ul {
 .header__img {
   width: 100%;
   object-fit: contain;
-}
-@media screen and (max-width: 720px) {
-  .header__nav {
-    margin: 2rem 0 0 0;
-  }
 }
 
 .anchors-nav {
@@ -140,12 +128,21 @@ ul {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  transition: all 0.4s;
 }
 @media screen and (max-width: 720px) {
   .anchors-nav__list {
-    width: auto;
+    width: 35%;
     flex-direction: column;
     justify-content: flex-start;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background-color: #0008;
+    left: 100%;
+  }
+  .anchors-nav__list--click {
+    left: 65%;
   }
 }
 .anchors-nav__item {
@@ -153,7 +150,19 @@ ul {
 }
 @media screen and (max-width: 720px) {
   .anchors-nav__item {
-    padding-bottom: 0.5rem;
+    width: 100%;
+  }
+  .anchors-nav__item:last-child {
+    border-bottom: 2px solid #000c;
+  }
+}
+.anchors-nav__burger {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .anchors-nav__burger {
+    display: block;
+    z-index: 2;
   }
 }
 .anchors-nav__anchor {
@@ -182,6 +191,65 @@ ul {
 }
 .anchors-nav__anchor:hover::before {
   transform: scaleX(1);
+}
+@media screen and (max-width: 720px) {
+  .anchors-nav__anchor {
+    border-top: 2px solid #000c;
+    background-color: #999a;
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s;
+  }
+  .anchors-nav__anchor::before {
+    display: none;
+  }
+  .anchors-nav__anchor:hover {
+    background-color: #355b82;
+    color: #fff;
+  }
+}
+
+.burger {
+  color: #000;
+  width: 42px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+}
+.burger__bar {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  background-color: currentColor;
+  left: 0;
+  transition: all 0.25s;
+}
+.burger__bar:nth-child(1) {
+  top: 0;
+}
+.burger__bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.burger__bar:nth-child(3) {
+  bottom: 0;
+}
+.burger--click .burger__bar:nth-child(1) {
+  top: 40%;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+.burger--click .burger__bar:nth-child(2) {
+  opacity: 0;
+}
+.burger--click .burger__bar:nth-child(3) {
+  bottom: 40%;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}
+.burger--click:hover {
+  color: #fff;
+  background-color: transparent;
 }
 
 .title-section {
