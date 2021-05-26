@@ -2,6 +2,7 @@ function BurgerMenu (id) {
     this.menu = document.getElementById(id);
     this.burger = this.menu.getElementsByClassName("burger")[0];
     this.anchorList = this.menu.getElementsByClassName("anchors-nav__list")[0];
+    console.log(this.burger.offsetParent);
     this.anchorList.style.paddingTop = this.burger.offsetParent.offsetHeight + "px";
 }
 
