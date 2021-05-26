@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Nav test</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__wrapper">
+				<div class="header__logo">nav</div>
+				<div class="header__nav nav-1">
+					<div class="nav-1__icon icon" id="button">
+						<div class="icon__wrapper">
+							<div class="icon__bar"></div>
+							<div class="icon__bar"></div>
+							<div class="icon__bar"></div>
+						</div>
+					</div>
+					<ul class="nav-1__list">
+						<li class="nav-1__item">
+							<a href="#" class="nav-1__anchor">home</a>
+						</li>
+						<li class="nav-1__item">
+							<a href="#" class="nav-1__anchor">about</a>
+						</li>
+						<li class="nav-1__item">
+							<a href="#" class="nav-1__anchor">services</a>
+						</li>
+						<li class="nav-1__item">
+							<a href="#" class="nav-1__anchor">blog</a>
+						</li>
+						<li class="nav-1__item">
+							<a href="#" class="nav-1__anchor">contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<hr>
+	<script>
+		let icon = document.getElementById ("button");
+		let nav = document.getElementsByClassName("nav-1__list")[0];
+		icon.addEventListener("click", e => {
+			nav.classList.toggle("nav-1__list--active");
+			if (nav.style.maxHeight) {
+				nav.style.maxHeight = null;
+			} else {
+				nav.style.maxHeight = nav.scrollHeight + "px";
+			}
+		});
+	</script>
+</body>
+</html>
