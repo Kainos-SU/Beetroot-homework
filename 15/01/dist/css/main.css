@@ -133,6 +133,7 @@ ul {
 @media screen and (max-width: 720px) {
   .anchors-nav__list {
     width: 35%;
+    padding-top: 106px;
     flex-direction: column;
     justify-content: flex-start;
     position: fixed;
