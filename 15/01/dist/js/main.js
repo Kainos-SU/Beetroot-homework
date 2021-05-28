@@ -6,11 +6,11 @@ function BurgerMenu (id) {
 }
 
 BurgerMenu.prototype.open_menu = function () {
-    this.anchorList.classList.add("anchors-nav__list--click");
+    this.menu.classList.add("anchors-nav--click");
 }
 
 BurgerMenu.prototype.close_menu = function () {
-    this.anchorList.classList.remove("anchors-nav__list--click");
+    this.menu.classList.remove("anchors-nav--click");
 }
 
 const menu = new BurgerMenu("header_nav");
