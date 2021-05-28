@@ -219,6 +219,7 @@ ul {
   height: 28px;
   cursor: pointer;
   position: relative;
+  transition: all 0.5s;
 }
 .burger__bar {
   position: absolute;

@@ -139,6 +139,7 @@
     height: $burger-size / 3 * 2;
     cursor: pointer;
     position: relative;
+    transition: all 0.5s;
 
     &__bar {
         position: absolute;
