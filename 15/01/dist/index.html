@@ -173,23 +173,43 @@
                     </p>
                     <ul class="gallery-section__gallery gallery">
                         <li class="gallery__tile gallery__tile--large">
-                            <img src="img/gallery/peach.jpg" alt="Peach" class="gallery__img">
+                            <img
+                                src="img/gallery/peach/peach.jpg"
+                                srcset="img/gallery/peach/peach@2x.jpg 2x, img/gallery/peach/peach@3x.jpg 3x"
+                                alt="Peach"
+                                class="gallery__img">
                         </li>
                         <li class="gallery__tile--small-groop">
                             <ul class="gallery__tile-list">
                                 <li class=" gallery__tile gallery__tile--full">
-                                    <img src="img/gallery/blueberry.jpg" alt="Blueberry" class="gallery__img">
+                                    <img
+                                        src="img/gallery/blueberry/blueberry.jpg"
+                                        srcset="img/gallery/blueberry/blueberry@2x.jpg 2x, img/gallery/blueberry/blueberry@3x.jpg 3x"
+                                        alt="Blueberry"
+                                        class="gallery__img">
                                 </li>
                                 <li class=" gallery__tile gallery__tile--full">
-                                    <img src="img/gallery/blackberry.jpg" alt="Blackberry" class="gallery__img">
+                                    <img
+                                        src="img/gallery/blackberry/blackberry.jpg"
+                                        srcset="img/gallery/blackberry/blackberry@2x.jpg 2x, img/gallery/blackberry/blackberry@3x.jpg 3x"
+                                        alt="Blackberry"
+                                        class="gallery__img">
                                 </li>
                             </ul>
                         </li>
                         <li class="gallery__tile">
-                            <img src="img/gallery/milk.jpg" alt="Berrys and milk" class="gallery__img">
+                            <img
+                                src="img/gallery/milk/milk.jpg"
+                                srcset="img/gallery/milk/milk@2x.jpg 2x, img/gallery/milk/milk@3x.jpg 3x"
+                                alt="Berrys and milk"
+                                class="gallery__img">
                         </li>
                         <li class="gallery__tile">
-                            <img src="img/gallery/hurma.jpg" alt="Hurma" class="gallery__img">
+                            <img
+                                src="img/gallery/hurma/hurma.jpg"
+                                srcset="img/gallery/hurma/hurma@2x.jpg 2x, img/gallery/hurma/hurma@3x.jpg 3x"
+                                alt="Hurma"
+                                class="gallery__img">
                         </li>
                     </ul>
                     <a href="#" class="gallery-section__btn btn">
@@ -246,7 +266,12 @@
                                     nov
                                 </div>
                             </div>
-                            <img src="./img/blog/smoozy.jpg" alt="Smoothie" class="card-list__img">
+                            <picture class="card-list__img">
+                                <source media="(max-resolution: 1dppx)" srcset="img/blog/smoozy/smoozy.jpg">
+                                <source media="(max-resolution: 2dppx)" srcset="img/blog/smoozy/smoozy@2x.jpg">
+                                <source media="(max-resolution: 3dppx)" srcset="img/blog/smoozy/smoozy@3x.jpg">
+                                <img src="img/blog/smoozy/smoozy.jpg" alt="Soop">
+                            </picture>
                             <div class="card-list__description">
                                 <h6 class="card-list__title">
                                     Green Smoothies: Too Much of a Good Thing?
@@ -265,7 +290,12 @@
                                     nov
                                 </div>
                             </div>
-                            <img src="img/blog/soop.jpg" alt="Soop" class="card-list__img">
+                            <picture class="card-list__img">
+                                <source media="(max-resolution: 1dppx)" srcset="img/blog/soop/soop.jpg">
+                                <source media="(max-resolution: 2dppx)" srcset="img/blog/soop/soop@2x.jpg">
+                                <source media="(max-resolution: 3dppx)" srcset="img/blog/soop/soop@3x.jpg">
+                                <img src="img/blog/soop/soop.jpg" alt="Soop">
+                            </picture>
                             <div class="card-list__description">
                                 <h6 class="card-list__title">
                                     Growing Food and a “Thirst” for Innovation
@@ -284,7 +314,12 @@
                                     nov
                                 </div>
                             </div>
-                            <img src="img/blog/raspberry.jpg" alt="Raspberry" class="card-list__img card-list__img--wide">
+                            <picture class="card-list__img card-list__img--wide">
+                                <source media="(max-resolution: 1dppx)" srcset="img/blog/raspberry/raspberry.jpg">
+                                <source media="(max-resolution: 2dppx)" srcset="img/blog/raspberry/raspberry@2x.jpg">
+                                <source media="(max-resolution: 3dppx)" srcset="img/blog/raspberry/raspberry@3x.jpg">
+                                <img src="img/blog/raspberry/raspberry.jpg" alt="Raspberry">
+                            </picture>
                             <div class="card-list__description">
                                 <h6 class="card-list__title">
                                     Pesticides & Food: What You Need to Know
@@ -316,7 +351,7 @@
                             <input class="contact-section__input-oneline" type="text" name="name" required placeholder="Your name...">
                             <input class="contact-section__input-oneline" type="email" name="email" required placeholder="Your email...">
                             <input class="contact-section__input-oneline" type="tel" name="phone" required placeholder="Your phone number...">
-                            <textarea class="contact-section__input-multiline" name="message"cols="30" rows="10" placeholder="Insert message here"></textarea>
+                            <textarea class="contact-section__input-multiline" name="message"cols="30" rows="5" placeholder="Insert message here"></textarea>
                             <button class="contact-section__btn btn" type="submit">send</button>
                         </form>
                         <address class="contact-section__contacts">

@@ -3,8 +3,27 @@
     background-color: #fff;
     background-image: url("../img/subscribe/some_berrys_idk.jpg");
     background-repeat: no-repeat;
-    background-position: center right 10%;
-    background-size: auto;
+    background-position: center right 15%;
+    background-size: 50% auto;
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and ( min--moz-device-pixel-ratio: 2),
+        only screen and ( -o-min-device-pixel-ratio: 2/1),
+        only screen and ( min-device-pixel-ratio: 2),
+        only screen and ( min-resolution: 192dpi),
+        only screen and ( min-resolution: 2dppx) {
+        background-image: url("../img/subscribe/some_berrys_idk@2x.jpg");
+    }
+
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and ( min--moz-device-pixel-ratio: 3),
+        only screen and ( -o-min-device-pixel-ratio: 3/1),
+        only screen and ( min-device-pixel-ratio: 3),
+        only screen and ( min-resolution: 384dpi),
+        only screen and ( min-resolution: 3dppx) {
+        background-image: url("../img/subscribe/some_berrys_idk@3x.jpg");
+    }
 
     @media screen and (max-width: 720px) {
         background-position: center;

@@ -82,9 +82,18 @@
         z-index: -1;
         width: 100%;
 
+        & img {
+            width: 100%;
+        }
+
         &--wide {
             width: auto;
             height: 100%;
+
+            & img {
+                width: auto;
+                height: 100%;
+            }
         }
     }
 

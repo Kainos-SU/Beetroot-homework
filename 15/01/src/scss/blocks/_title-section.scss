@@ -2,8 +2,31 @@
     background: rgb(249,248,251);
     background: url("../img/title/strawberry.jpg"),
                 linear-gradient(90deg, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
-    background-position: bottom right 5%;
+    background-position: bottom right 15%;
     background-repeat: no-repeat;
+    background-size: auto 100%;
+
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and ( min--moz-device-pixel-ratio: 2),
+        only screen and ( -o-min-device-pixel-ratio: 2/1),
+        only screen and ( min-device-pixel-ratio: 2),
+        only screen and ( min-resolution: 192dpi),
+        only screen and ( min-resolution: 2dppx) {
+        background-image: url("../img/title/strawberry@2x.jpg"),
+                        linear-gradient(90deg, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
+    }
+
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and ( min--moz-device-pixel-ratio: 3),
+        only screen and ( -o-min-device-pixel-ratio: 3/1),
+        only screen and ( min-device-pixel-ratio: 3),
+        only screen and ( min-resolution: 384dpi),
+        only screen and ( min-resolution: 3dppx) {
+            background-image: url("../img/title/strawberry@3x.jpg"),
+            linear-gradient(90deg, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
+    }
     
     @media screen and (max-width: 960px) {
         background-position: center bottom;

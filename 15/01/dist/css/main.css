@@ -260,8 +260,19 @@ ul {
 .title-section {
   background: #f9f8fb;
   background: url("../img/title/strawberry.jpg"), linear-gradient(90deg, #f9f8fb 0%, #faf9fc 50%, #f9f8fb 100%);
-  background-position: bottom right 5%;
+  background-position: bottom right 15%;
   background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .title-section {
+    background-image: url("../img/title/strawberry@2x.jpg"), linear-gradient(90deg, #f9f8fb 0%, #faf9fc 50%, #f9f8fb 100%);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 384dpi), only screen and (min-resolution: 3dppx) {
+  .title-section {
+    background-image: url("../img/title/strawberry@3x.jpg"), linear-gradient(90deg, #f9f8fb 0%, #faf9fc 50%, #f9f8fb 100%);
+  }
 }
 @media screen and (max-width: 960px) {
   .title-section {
@@ -305,11 +316,23 @@ ul {
   background-image: url("../img/about/cup.png");
   background-repeat: no-repeat;
   background-position: center left 10%;
+  background-size: contain;
   padding: 10rem 0 14.375rem;
 }
 @media screen and (max-width: 1140px) {
   .about-section {
     background-position: center;
+    background-size: contain;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .about-section {
+    background-image: url("../img/about/cup_2x.png");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 384dpi), only screen and (min-resolution: 3dppx) {
+  .about-section {
+    background-image: url("../img/about/cup_3x.png");
   }
 }
 .about-section__wrapper {
@@ -378,6 +401,17 @@ ul {
   background-image: url("../img/services/tomat.png");
   background-repeat: no-repeat;
   background-position: center right;
+  background-size: contain;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .service-section__content {
+    background-image: url("../img/services/tomat_2x.png");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 384dpi), only screen and (min-resolution: 3dppx) {
+  .service-section__content {
+    background-image: url("../img/services/tomat_3x.png");
+  }
 }
 @media screen and (max-width: 960px) {
   .service-section__content {
@@ -385,11 +419,7 @@ ul {
     justify-content: center;
     background-position: center top;
     padding-left: 0;
-  }
-}
-@media screen and (max-width: 540px) {
-  .service-section__content {
-    background-size: contain;
+    background-position: top 10% center;
   }
 }
 .service-section__list-wrapper {
@@ -551,8 +581,18 @@ ul {
   background-color: #fff;
   background-image: url("../img/subscribe/some_berrys_idk.jpg");
   background-repeat: no-repeat;
-  background-position: center right 10%;
-  background-size: auto;
+  background-position: center right 15%;
+  background-size: 50% auto;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .subscribe-section {
+    background-image: url("../img/subscribe/some_berrys_idk@2x.jpg");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 384dpi), only screen and (min-resolution: 3dppx) {
+  .subscribe-section {
+    background-image: url("../img/subscribe/some_berrys_idk@3x.jpg");
+  }
 }
 @media screen and (max-width: 720px) {
   .subscribe-section {
@@ -713,7 +753,14 @@ ul {
   z-index: -1;
   width: 100%;
 }
+.card-list__img img {
+  width: 100%;
+}
 .card-list__img--wide {
+  width: auto;
+  height: 100%;
+}
+.card-list__img--wide img {
   width: auto;
   height: 100%;
 }
@@ -793,6 +840,16 @@ ul {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 6.25rem 0 7.5rem;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .contact-section {
+    background-image: url("../img/contact/contact_bg@2x.jpg");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 384dpi), only screen and (min-resolution: 3dppx) {
+  .contact-section {
+    background-image: url("../img/contact/contact_bg@3x.jpg");
+  }
 }
 .contact-section__title {
   text-align: center;

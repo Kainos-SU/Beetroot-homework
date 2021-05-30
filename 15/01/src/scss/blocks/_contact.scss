@@ -27,6 +27,26 @@
     background-repeat: no-repeat;
     padding: 100 / 16 * 1rem 0 120 / 16 * 1rem;
 
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and ( min--moz-device-pixel-ratio: 2),
+        only screen and ( -o-min-device-pixel-ratio: 2/1),
+        only screen and ( min-device-pixel-ratio: 2),
+        only screen and ( min-resolution: 192dpi),
+        only screen and ( min-resolution: 2dppx) {
+        background-image: url("../img/contact/contact_bg@2x.jpg");
+    }
+
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and ( min--moz-device-pixel-ratio: 3),
+        only screen and ( -o-min-device-pixel-ratio: 3/1),
+        only screen and ( min-device-pixel-ratio: 3),
+        only screen and ( min-resolution: 384dpi),
+        only screen and ( min-resolution: 3dppx) {
+        background-image: url("../img/contact/contact_bg@3x.jpg");
+    }
+
     &__title {
         text-align: center;
         margin-bottom: 45 / 16 * 1rem;
