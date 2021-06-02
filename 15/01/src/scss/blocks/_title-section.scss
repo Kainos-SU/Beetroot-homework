@@ -1,6 +1,10 @@
 .title-section {
     background: rgb(249,248,251);
     background: url("../img/title/strawberry.jpg"),
+                -webkit-gradient(linear, left top, right top, from(rgba(249,248,251,1)), color-stop(50%, rgba(250,249,252,1)), to(rgba(249,248,251,1)));
+    background: url("../img/title/strawberry.jpg"),
+                -o-linear-gradient(left, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
+    background: url("../img/title/strawberry.jpg"),
                 linear-gradient(90deg, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
     background-position: bottom right 15%;
     background-repeat: no-repeat;
@@ -8,22 +12,32 @@
 
     @media
         only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and ( min--moz-device-pixel-ratio: 2),
         only screen and ( -o-min-device-pixel-ratio: 2/1),
         only screen and ( min-device-pixel-ratio: 2),
+        only screen and ( -webkit-min-device-pixel-ratio: 2),
         only screen and ( min-resolution: 192dpi),
         only screen and ( min-resolution: 2dppx) {
+        background-image: url("../img/title/strawberry@2x.jpg"),
+                        -webkit-gradient(linear, left top, right top, from(rgba(249,248,251,1)), color-stop(50%, rgba(250,249,252,1)), to(rgba(249,248,251,1)));
+        background-image: url("../img/title/strawberry@2x.jpg"),
+                        -o-linear-gradient(left, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
         background-image: url("../img/title/strawberry@2x.jpg"),
                         linear-gradient(90deg, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
     }
 
     @media
         only screen and (-webkit-min-device-pixel-ratio: 3),
-        only screen and ( min--moz-device-pixel-ratio: 3),
         only screen and ( -o-min-device-pixel-ratio: 3/1),
         only screen and ( min-device-pixel-ratio: 3),
+        only screen and ( -webkit-min-device-pixel-ratio: 4),
+        only screen and ( -o-min-device-pixel-ratio: 4/1),
         only screen and ( min-resolution: 384dpi),
+        only screen and ( -webkit-min-device-pixel-ratio: 3),
         only screen and ( min-resolution: 3dppx) {
+            background-image: url("../img/title/strawberry@3x.jpg"),
+            -webkit-gradient(linear, left top, right top, from(rgba(249,248,251,1)), color-stop(50%, rgba(250,249,252,1)), to(rgba(249,248,251,1)));
+            background-image: url("../img/title/strawberry@3x.jpg"),
+            -o-linear-gradient(left, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
             background-image: url("../img/title/strawberry@3x.jpg"),
             linear-gradient(90deg, rgba(249,248,251,1) 0%, rgba(250,249,252,1) 50%, rgba(249,248,251,1) 100%);
     }

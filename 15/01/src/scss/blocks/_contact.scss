@@ -29,9 +29,9 @@
 
     @media
         only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and ( min--moz-device-pixel-ratio: 2),
         only screen and ( -o-min-device-pixel-ratio: 2/1),
         only screen and ( min-device-pixel-ratio: 2),
+        only screen and ( -webkit-min-device-pixel-ratio: 2),
         only screen and ( min-resolution: 192dpi),
         only screen and ( min-resolution: 2dppx) {
         background-image: url("../img/contact/contact_bg@2x.jpg");
@@ -39,10 +39,12 @@
 
     @media
         only screen and (-webkit-min-device-pixel-ratio: 3),
-        only screen and ( min--moz-device-pixel-ratio: 3),
         only screen and ( -o-min-device-pixel-ratio: 3/1),
         only screen and ( min-device-pixel-ratio: 3),
+        only screen and ( -webkit-min-device-pixel-ratio: 4),
+        only screen and ( -o-min-device-pixel-ratio: 4/1),
         only screen and ( min-resolution: 384dpi),
+        only screen and ( -webkit-min-device-pixel-ratio: 3),
         only screen and ( min-resolution: 3dppx) {
         background-image: url("../img/contact/contact_bg@3x.jpg");
     }
@@ -58,13 +60,24 @@
     }
 
     &__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
 
         @media screen and (max-width: 720px) {
-            flex-direction: column-reverse;
-            justify-content: flex-start;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: reverse;
+                -ms-flex-direction: column-reverse;
+                    flex-direction: column-reverse;
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
     }
 
@@ -98,6 +111,22 @@
             @extend %input-focus; 
         }
 
+        &::-webkit-input-placeholder {
+            color: #fff;
+        }
+
+        &::-moz-placeholder {
+            color: #fff;
+        }
+
+        &:-ms-input-placeholder {
+            color: #fff;
+        }
+
+        &::-ms-input-placeholder {
+            color: #fff;
+        }
+
         &::placeholder {
             color: #fff;
         }
@@ -121,6 +150,26 @@
         
         &:focus-visible {
             @extend %input-focus; 
+        }
+
+        &::-webkit-input-placeholder {
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        &::-moz-placeholder {
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        &:-ms-input-placeholder {
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        &::-ms-input-placeholder {
+            color: #fff;
+            font-size: 1rem;
         }
 
         &::placeholder {

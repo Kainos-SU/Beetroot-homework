@@ -7,9 +7,9 @@
     background-size: 50% auto;
     @media
         only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and ( min--moz-device-pixel-ratio: 2),
         only screen and ( -o-min-device-pixel-ratio: 2/1),
         only screen and ( min-device-pixel-ratio: 2),
+        only screen and ( -webkit-min-device-pixel-ratio: 2),
         only screen and ( min-resolution: 192dpi),
         only screen and ( min-resolution: 2dppx) {
         background-image: url("../img/subscribe/some_berrys_idk@2x.jpg");
@@ -17,10 +17,12 @@
 
     @media
         only screen and (-webkit-min-device-pixel-ratio: 3),
-        only screen and ( min--moz-device-pixel-ratio: 3),
         only screen and ( -o-min-device-pixel-ratio: 3/1),
         only screen and ( min-device-pixel-ratio: 3),
+        only screen and ( -webkit-min-device-pixel-ratio: 4),
+        only screen and ( -o-min-device-pixel-ratio: 4/1),
         only screen and ( min-resolution: 384dpi),
+        only screen and ( -webkit-min-device-pixel-ratio: 3),
         only screen and ( min-resolution: 3dppx) {
         background-image: url("../img/subscribe/some_berrys_idk@3x.jpg");
     }
@@ -70,19 +72,30 @@
     &__subscribe-form {
         max-width: 770px;
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
 
         @media screen and (max-width: 720px) {
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
     }
     
     &__email {
         max-width: 570px;
         width: 570 / 770 * 100%;
-        flex: 1 1 auto;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
         font-size: 15px;
         font-weight: 300;
         padding: 0 1em;
