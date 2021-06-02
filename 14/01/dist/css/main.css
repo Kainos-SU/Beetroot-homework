@@ -8,6 +8,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 1140px;
   width: 90%;
@@ -106,5 +110,3 @@ ul {
 body {
   font-family: sans-serif;
 }
-
-/*# sourceMappingURL=main.css.map */

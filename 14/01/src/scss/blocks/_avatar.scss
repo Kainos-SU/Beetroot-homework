@@ -1,0 +1,23 @@
+%cross {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 50%;
+    left:50%;
+}
+
+$border-gap: 216 / 418 * 100%;
+$edge-lenght: 418px;
+
+.avatar {
+    max-width: $edge-length;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+        @extend %cross;
+    }
+
+    &::after {}
+}
