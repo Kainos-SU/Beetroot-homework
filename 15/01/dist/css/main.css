@@ -628,6 +628,7 @@ ul {
   font-size: 0;
 }
 .gallery__tile {
+  width: 48%;
   width: calc(50% - 15px);
   margin-bottom: 30px;
   -webkit-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.8);
@@ -648,6 +649,7 @@ ul {
   }
 }
 .gallery__tile--large {
+  width: 66.6666666667%;
   width: calc((100% / 3) * 2 - 15px);
 }
 @media screen and (max-width: 960px) {
@@ -657,10 +659,8 @@ ul {
 }
 .gallery__tile--small-groop {
   width: calc(100% / 3 - 15px);
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 @media screen and (max-width: 960px) {
