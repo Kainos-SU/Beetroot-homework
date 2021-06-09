@@ -104,6 +104,9 @@
 
     &__input-button{
         @extend %single_form;
+        & .form__input-line {
+            margin-bottom: 0;
+        }
     }
 
     &__input-line {
@@ -118,13 +121,25 @@
     &__wrapper {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
+
+    &__col-title {
+        text-align: center;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    &__label {
+        margin-bottom: 10px;
+    }
+
+
 
     &__col {
         width: 100%;
-        text-align: center;
         display: flex;
         flex-direction: column;
+        padding: 5px;
     }
 }

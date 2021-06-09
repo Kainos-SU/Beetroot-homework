@@ -10,6 +10,16 @@ function writeOutput (div, text, owerwrite=true) {
     //retrun div.innerHTML;
 }
 
+function yearIsLeep (year) {
+    let div400 = (year % 400) === 0;
+    let div4 = (year % 4) === 0 && (year % 100) !== 0;
+
+    if (div400 || div4) {
+        return true;
+    }
+    return false;
+}
+
 let exercise1obj = {};
 exercise1obj.outputField = exercise1.getElementsByClassName("exercise__output-field")[0];
 exercise1obj.inputField = exercise1.getElementsByClassName("exercise__input-line")[0];
@@ -306,8 +316,110 @@ exercise7obj.btn.addEventListener("click", (e)=>{
 
 const exercise8 = document.getElementById("exercise8");
 const exercise8obj = {
-    "inputField" : exercise8.getElementsByClassName("exercise__input-line"),
+    "circle" : exercise8.querySelector("input[name=circle]"),
+    "square" : exercise8.querySelector("input[name=square]"),
     "outputField" : exercise8.getElementsByClassName("exercise__output-field")[0],
-    "btn" : exercise8.getElementsByClassName("exercise__btn")[0]
+    "btn" : exercise8.getElementsByClassName("form__btn")[0]
 };
 
+exercise8obj.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    const circle_area = parseFloat(exercise8obj.circle.value);
+    const square_perimetr = parseFloat(exercise8obj.square.value);
+    if (isNaN(circle_area) || isNaN(square_perimetr)) {
+        writeOutput(exercise8obj, "Введіть в обидва поля числові значення!");
+        return;
+    }
+
+    const circle_radius = Math.sqrt(circle_area / Math.PI);
+    const square_side = square_perimetr / 4;
+
+    if ((2 * circle_radius) <= square_side) {
+        writeOutput(exercise8obj.outputField, `Коло з площою ${circle_area} можна вписати в квадрат з периметром ${square_perimetr}`);
+    } else {
+        writeOutput(exercise8obj.outputField, `Коло з площою ${circle_area} НЕ можна вписати в квадрат з периметром ${square_perimetr}`);
+    }
+});
+
+
+const exercise9 = document.getElementById("exercise9");
+const exercise9obj = {
+    "outputField" : exercise9.getElementsByClassName("exercise__output-field")[0],
+    "btn" : exercise9.getElementsByClassName("form__btn")[0],
+    "questions" : [
+        Array.from(exercise9.querySelectorAll("[name=first_question]")),
+        Array.from(exercise9.querySelectorAll("[name=second_question]")),
+        Array.from(exercise9.querySelectorAll("[name=third_question]"))
+    ]
+};
+
+exercise9obj.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    let score = 0;
+    for (let i of exercise9obj.questions) {
+        if (i.find(j=>j.checked).value === "true") {
+            score += 2;
+        }
+    }
+
+    writeOutput(exercise9obj.outputField, `Твій рахунок ${score}`);
+})
+
+
+const exercise10 = document.getElementById("exercise10");
+const exercise10obj = {
+    "inputField" : exercise10.getElementsByClassName("exercise__input-line")[0],
+    "outputField" : exercise10.getElementsByClassName("exercise__output-field")[0],
+    "btn" : exercise10.getElementsByClassName("exercise__btn")[0]
+};
+
+exercise10obj.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    let date = exercise10obj.inputField.value;
+    let regexpdate = /^[0-9]{1,2}.[0-9]{1,2}.[0-9]{4}$/;
+
+    let day, month, year;
+    [day, month, year] = date.split(".");
+    if (!(date.match(regexpdate))) {
+        writeOutput(exercise10obj.outputField, `Очікується дата в форматі дд.мм.рррр. Введено ${date}`);
+        return;
+    }
+
+    day -= 1;
+    if (day == 0) {
+        month -= 1;
+        if (month == 0) {
+            year -= 1;
+            month = 12;
+        }
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                day = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                day = 30;
+                break;
+            case 2:
+                if (yearIsLeep(year)){
+                    day = 29;
+                }
+                else
+                    day = 28;
+        }
+    }
+
+    writeOutput(exercise10obj.outputField, `${day}.${month}.${year}`);
+
+});

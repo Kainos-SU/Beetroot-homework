@@ -147,38 +147,38 @@
                             <div class="form__wrapper">
                                 <div class="form__col">
                                     <div>From</div>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="from" value="USD" checked>
                                         USD
                                     </label>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="from" value="UAH">
                                         UAH
                                     </label>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="from" value="AZN">
                                         AZN
                                     </label>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="from" value="EUR">
                                         EUR
                                     </label>
                                 </div>
                                 <div class="form__col">
                                     <div>To</div>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="to" value="USD">
                                         USD
                                     </label>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="to" value="UAH" checked>
                                         UAH
                                     </label>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="to" value="AZN">
                                         AZN
                                     </label>
-                                    <label class="form-label">
+                                    <label class="form__label">
                                         <input type="radio" name="to" value="EUR">
                                         EUR
                                     </label>
@@ -234,6 +234,113 @@
                                 <input class="form__input-line" type="text" name="square" placeholder="Insert square perimetr">
                                 
                                 <button class="form__btn btn">go</button>
+                        </form>
+                    </div>
+                    <div class="exercise__output">
+                        <div class="exercise__output-field"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
+        <section class="exercise" id="exercise9">
+            <div class="container">
+                <h2 class="exercise__title">Exercise 9</h2>
+                <p class="exercise__description">
+                    Задать пользователю 3 вопроса,
+                    в каждом вопросе по 3 варианта ответа.
+                    За каждый правильный ответ начисляется 2 балла.
+                    После вопросов выведите пользователю количество
+                    набранных баллов.
+                </p>
+                <div class="exercise__wrapper">
+                    <div class="exercise__input">
+                        <form class="exercise__complex-form form" action="#" method="GET" name="exercise_9">
+                            <div class="form__wrapper">
+                                <div class="form__col">
+                                    <div class="form__col-title">
+                                        Чему будет равен x в примере ниже?<br>
+                                        var a = 2;<br>
+                                        var x = 1 + (a *= 2);
+                                    </div>
+                                    <label class="form__label">
+                                        <input type="radio" name="first_question" value="false">
+                                        7
+                                    </label>
+                                    <label class="form__label">
+                                        <input type="radio" name="first_question" value="false">
+                                        3
+                                    </label>
+                                    <label class="form__label">
+                                        <input type="radio" name="first_question" value="true">
+                                        5
+                                    </label>
+                                </div>
+                                <div class="form__col">
+                                    <div class="form__col-title">
+                                        Какой из следующих вариантов сохраняет
+                                        число 225.622 в переменной milesToTheMoon?
+                                    </div>
+                                    <label class="form__label">
+                                        <input type="radio" name="second_question" value="false">
+                                        var milesToTheMoon='225622';
+                                    </label>
+                                    <label class="form__label">
+                                        <input type="radio" name="second_question" value="true">
+                                        var milesToTheMoon=225.622;
+                                    </label>
+                                    <label class="form__label">
+                                        <input type="radio" name="second_question" value="false">
+                                        var milesToTheMoon=225,622;
+                                    </label>
+                                </div>
+                                <div class="form__col">
+                                    <div class="form__col-title">
+                                        Что выведет данный код? 
+                                        <br>
+                                        alert( null || 2 || undefined );
+                                    </div>
+                                    <label class="form__label">
+                                        <input type="radio" name="third_question" value="true">
+                                        2
+                                    </label>
+                                    <label class="form__label">
+                                        <input type="radio" name="third_question" value="false">
+                                        null
+                                    </label>
+                                    <label class="form__label">
+                                        <input type="radio" name="third_question" value="false">
+                                        undefined
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="form__btn btn">test</button>
+                        </form>
+                    </div>
+                    <div class="exercise__output">
+                        <div class="exercise__output-field"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
+        <section class="exercise" id="exercise10">
+            <div class="container">
+                <h2 class="exercise__title">Exercise 10</h2>
+                <p class="exercise__description">
+                    Запросить дату (день, месяц, год)
+                    и вывести следующую за ней дату.
+                    Учтите возможность перехода на
+                    следующий месяц, год, а также
+                    високосный год.
+                </p>
+                <div class="exercise__wrapper">
+                    <div class="exercise__input">
+                        <form class="exercise__form" action="#" method="GET" name="exercise_10">
+                            <input class="exercise__input-line" type="text" placeholder="Insert date: dd.mm.yyyy">
+                            <button class="exercise__btn btn">go</button>
                         </form>
                     </div>
                     <div class="exercise__output">
