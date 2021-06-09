@@ -1,0 +1,70 @@
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.exercise {
+    padding-top: 20px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            background-color: #000;
+        }
+
+        
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    &__input,
+    &__output {
+        padding: 10px;
+    }
+
+    &__form {
+        display: flex;
+        border: 2px solid white;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__input-line {
+        width: 70%;
+        padding: 5px;
+
+        &::placeholder {
+            text-align: center;
+        }
+    }
+
+    &__btn {
+        width: 30%;
+    }
+}
+
+
+.btn {
+    font-size: 20 / 16 * 1rem;
+    line-height: 32 / 16 * 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 0;
+}
