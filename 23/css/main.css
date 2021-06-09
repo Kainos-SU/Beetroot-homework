@@ -18,6 +18,21 @@ html {
   margin: 0 auto;
 }
 
+.form__input-button, .exercise__form {
+  display: flex;
+  border: 2px solid white;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form__input-line, .exercise__input-line {
+  width: 70%;
+  padding: 5px;
+}
+.form__input-line::placeholder, .exercise__input-line::placeholder {
+  text-align: center;
+}
+
 .exercise {
   padding-top: 20px;
 }
@@ -55,24 +70,17 @@ html {
 .exercise__title {
   text-align: center;
   margin-bottom: 15px;
+  font-size: 2rem;
+}
+.exercise__description {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 .exercise__input, .exercise__output {
   padding: 20px;
   width: 100%;
   min-height: 2em;
-}
-.exercise__form {
-  display: flex;
-  border: 2px solid white;
-  width: 90%;
-  margin: 0 auto;
-}
-.exercise__input-line {
-  width: 70%;
-  padding: 5px;
-}
-.exercise__input-line::placeholder {
-  text-align: center;
 }
 .exercise__btn {
   width: 30%;
@@ -86,6 +94,28 @@ html {
   background-color: green;
   border: none;
   border-radius: 0;
+}
+
+.form {
+  width: 90%;
+  margin: 0 auto;
+}
+.form__input-line {
+  margin-bottom: 10px;
+}
+.form__btn {
+  width: 30%;
+}
+.form__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form__col {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=main.css.map */
