@@ -137,6 +137,7 @@ exercise4.btn.addEventListener("click", e=>{
     exercise4.writeOutput(`У числі ${number} ${counter} цифр!`);
 });
 
+
 const exercise5 = new StandartSection("exercise5");
 exercise5.btn.addEventListener("click", e=>{
     e.preventDefault();
@@ -170,4 +171,125 @@ exercise5.btn.addEventListener("click", e=>{
     }
 
     exercise5.writeOutput(`Коротка статистика того шо ти наштрикав:<br>-Кількість позитивних чисел - ${positives}<br>-Кількість негативних чисел - ${negatives}<br>-Кількість нулів - ${zeroes}`);
+});
+
+
+const exercise6 = new StandartSection("exercise6");
+exercise6.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    while(true) {
+        let firstNumber, secondNumber;
+        do{
+            firstNumber = parseInt(prompt("Введіть перше число:"));
+            secondNumber = parseInt(prompt("Введіть друге число:"));
+            if (isNaN(firstNumber) || isNaN(secondNumber))
+                alert("Введи числа!");
+        } while (isNaN(firstNumber) || isNaN(secondNumber))
+
+        let operand = prompt("Введіть одну із можливих операцій ('+', '-', '/', '*', '**')");
+        switch (operand) {
+            case '+':
+                alert(`Сума введених чисел ${firstNumber + secondNumber}`);
+                break;
+            case '-':
+                alert(`Різниця введених чисел ${firstNumber - secondNumber}`);
+                break;
+            case '*':
+                alert(`Добуток введених чисел ${firstNumber * secondNumber}`);
+                break;
+            case '/':
+                alert(`Частка ${secondNumber} від ${firstNumber} становить ${firstNumber / secondNumber}`);
+                break;
+            case '**':
+                alert(`${firstNumber} в степені ${secondNumber} дорівнює ${firstNumber ** secondNumber}`);
+                break;
+            default:
+                alert(`Помилка! ${operand} не є корректним операндом. Спробуй ще раз!`);
+                continue;
+        }
+
+        if (!(confirm("Бажаеш продовжити?"))) {
+            break;
+        }
+    }
+});
+
+
+
+const exercise7 = new StandartSection("exercise7");
+exercise7.checkbox = exercise7.section.querySelector("input[name=right_shift]");
+exercise7.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    let number = parseInt(exercise7.input[0].value); 
+    const shift = parseInt(exercise7.input[1].value);
+    if (isNaN(number) || isNaN(shift)){
+        exercise7.writeOutput("Введіть цілі числа");
+        return;
+    }
+
+    let temp = number;
+    let counter = 0;
+    while (temp) {
+        ++counter;
+        temp = Math.floor(temp / 10);
+    }
+    --counter;
+
+    if (exercise7.checkbox.checked) {
+        for (let i = 0; i < shift; ++i) {
+            number = (number % 10) * (10 ** counter) + Math.floor(number / 10);
+        }
+    }else {
+        for (let i = 0; i < shift; ++i) {
+            number = Math.floor(number / (10 **counter)) + ((number % (10 ** counter)) * 10);
+        }
+    }
+    exercise7.writeOutput(number);
+});
+
+
+const exercise8 = new StandartSection("exercise8");
+exercise8.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    let now = new Date();
+    const option = {weekday: "long"};
+    let str;
+    while(true) {
+        dateString = new Intl.DateTimeFormat("uk", option).format(now); 
+        if (!confirm(`${dateString[0].toUpperCase() + dateString.substring(1)}. Хочеш продовжити?`))
+            return;
+        now.setDate(now.getDate() + 1);
+    }
+});
+
+const exercise9 = new StandartSection("exercise9");
+exercise9.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    exercise9.writeOutput("");
+    const table = document.createElement("table");
+    table.setAttribute("class", "exercise__output-table");
+    exercise9.output.append(table);
+    const tbody = document.createElement("tbody");
+
+    let tr = document.createElement("tr");
+    
+    for (let i = 0; i < 8; ++i) {
+        if (i % 4 === 0) {
+            tbody.append(tr);
+            tr = document.createElement("tr");
+        }
+        let td = document.createElement("td");
+        for (let j = 1; j <= 10; ++j){
+            let p = document.createElement("p");
+            p.innerText = `${i+2} * ${j} = ${(i + 2) * j}`;
+            td.append(p);
+        }
+        tr.append(td);
+    }
+    tbody.append(tr);
+    table.append(tbody);
 });
