@@ -293,3 +293,41 @@ exercise9.btn.addEventListener("click", e=>{
     tbody.append(tr);
     table.append(tbody);
 });
+
+
+const exercise10 = new StandartSection("exercise10");
+exercise10.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    let beginRange = parseInt(exercise10.input[0].value);
+    let endRange = parseInt(exercise10.input[1].value);
+    if (isNaN(beginRange) || isNaN(endRange)) {
+        exercise10.writeOutput("Введи числа!");
+        return;
+    }
+    if (beginRange > endRange) {
+        [beginRange, endRange] = [endRange, beginRange];
+    }
+
+    while(true) {
+        let guess = Math.floor((endRange - beginRange) / 2) + beginRange;
+        let t = prompt(`Ти загадав ${guess}?\nЯкщо це так введи "=", якщо загадане тобою число більше, введи "+", якщо менше "-".`);
+
+        switch(t) {
+            case "+":
+                beginRange = guess;
+                break;
+            case "-":
+                endRange = guess;
+                break;
+            case "=":
+                exercise10.writeOutput(`Загадане тобою число ${guess}`);
+                return;
+            case "":
+            case null:
+                return;
+            default:
+                alert("Неправильний вибір!");
+        }
+    }
+});
