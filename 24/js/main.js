@@ -8,9 +8,6 @@ function StandartSection(sectionId) {
     this.btn = this.section.getElementsByClassName("btn")[0];
 }
 
-StandartSection.prototype.test = function() {
-    console.log(this);
-}
 
 StandartSection.prototype.writeOutput = function (message, overwrite=true) {
     if (overwrite) {
@@ -145,6 +142,8 @@ exercise5.btn.addEventListener("click", e=>{
     let positives = 0;
     let negatives = 0;
     let zeroes = 0;
+    let even = 0;
+    let odd = 0;
     for (let i = 0; i < antiMagicNumber; ++i) {
         let input;
         if (!i) {
@@ -162,6 +161,12 @@ exercise5.btn.addEventListener("click", e=>{
             continue;
         }
 
+        if (input % 2) {
+            ++odd;
+        }else {
+            ++even;
+        }
+
         if (input > 0) 
             ++positives;
         else if (input < 0)
@@ -170,7 +175,7 @@ exercise5.btn.addEventListener("click", e=>{
             ++zeroes; 
     }
 
-    exercise5.writeOutput(`Коротка статистика того шо ти наштрикав:<br>-Кількість позитивних чисел - ${positives}<br>-Кількість негативних чисел - ${negatives}<br>-Кількість нулів - ${zeroes}`);
+    exercise5.writeOutput(`Коротка статистика того шо ти наштрикав:<br>-Кількість позитивних чисел - ${positives}<br>-Кількість негативних чисел - ${negatives}<br>-Кількість нулів - ${zeroes}<br>Кількість парних чисел - ${even}<br>Кількість непарних чисел - ${odd}`);
 });
 
 
