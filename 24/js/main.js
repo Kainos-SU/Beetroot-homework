@@ -263,7 +263,7 @@ exercise8.btn.addEventListener("click", e=>{
     const option = {weekday: "long"};
     let str;
     while(true) {
-        dateString = new Intl.DateTimeFormat("uk", option).format(now); 
+        const dateString = new Intl.DateTimeFormat("uk", option).format(now); 
         if (!confirm(`${dateString[0].toUpperCase() + dateString.substring(1)}. Хочеш продовжити?`))
             return;
         now.setDate(now.getDate() + 1);
