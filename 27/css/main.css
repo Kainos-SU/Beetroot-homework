@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form__input-button, .exercise__form {
+  display: flex;
+  border: 2px solid white;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form__input-line, .exercise__input-line {
+  width: 70%;
+  padding: 5px;
+}
+.form__input-line::placeholder, .exercise__input-line::placeholder {
+  text-align: center;
+}
+
+.exercise {
+  padding-top: 20px;
+}
+.exercise__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+@media screen and (max-width: 540px) {
+  .exercise__wrapper {
+    flex-wrap: wrap;
+  }
+}
+.exercise__wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  background-color: #000;
+}
+@media screen and (max-width: 540px) {
+  .exercise__wrapper::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    bottom: auto;
+    left: 0;
+  }
+}
+.exercise__title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+.exercise__description {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.exercise__input, .exercise__output {
+  padding: 5px;
+  width: 100%;
+  min-height: 2em;
+}
+.exercise__btn {
+  width: 30%;
+}
+
+.btn {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 0;
+}
+
+.form {
+  width: 90%;
+  margin: 0 auto;
+}
+.form__input-button .form__input-line {
+  margin-bottom: 0;
+}
+.form__input-line {
+  margin-bottom: 10px;
+}
+.form__btn {
+  min-width: 30%;
+}
+.form__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.form__col-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.form__label {
+  margin-bottom: 10px;
+}
+.form__col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+}
+.form__six-fields-input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.form__six-fields-input + .btn {
+  display: block;
+  margin: 0 auto;
+}
+.form__input-separator {
+  flex: 0 1 100%;
+  padding-right: 10px;
+}
+.form__input-separator:last-child {
+  padding: 0;
+}
+.form__input-separator input {
+  width: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */
