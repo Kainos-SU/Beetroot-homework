@@ -32,7 +32,7 @@
                
                 <div class="exercise__wrapper">
                     <div class="exercise__input">
-                        <form class="exercise__complex-form form" action="#" method="GET" name="exercise_1">
+                        <form class="exercise__complex-form form" action="#" method="GET" name="exercise_0">
                             <div class="form__wrapper">
                                 <div class="form__col">
                                     <h3 class="form__col-title">Додати елемент</h3>
@@ -50,10 +50,156 @@
                                 <div class="form__col">
                                     <h3 class="form__col-title">Інші дії</h3>
                                     <button class="form__btn btn">elements list</button>
-                                    <button class="form__btn btn">number of repeats</button>
-                                    <button class="form__btn btn">elements count</button>
                                 </div>
                             </div>
+                        </form>
+                    </div>
+                    <div class="exercise__output">
+                        <div class="exercise__output-field"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
+        <section class="exercise" id="exercise1">
+            <div class="container">
+                <h2 class="exercise__title">Exercise 1</h2>
+                <p class="exercise__description">
+                    Создать массив «Список покупок». Каждый элемент
+                    массива является объектом, который содержит
+                    название продукта, необходимое количество и
+                    куплен или нет. Написать несколько функций для
+                    работы с таким массивом.
+                </p>
+                <ol>
+                    <li>
+                        Вывод всего списка на экран таким образом,
+                        чтобы сначала шли некупленные продукты, а потом –
+                        купленные.
+                    </li>
+                    <li>
+                        Добавление покупки в список. Учтите, что при
+                        добавлении покупки с уже существующим в списке
+                        продуктом, необходимо увеличивать количество в
+                        существующей покупке, а не добавлять новую.
+                    </li>
+                    <li>
+                        Покупка продукта. Функция принимает название
+                        продукта и отмечает его как купленный.
+                    </li>
+                </ol>
+               
+                <div class="exercise__wrapper">
+                    <div class="exercise__input">
+                        <form class="exercise__complex-form form" action="#" method="GET" name="exercise_1">
+                            <div class="form__wrapper">
+                                <div class="form__col">
+                                    <h3 class="form__col-title">Додати продукт до списку</h3>
+                                    <div class="form__input-button">
+                                        <input class="form__input-line" type="text" placeholder="Введіть назву елемента">
+                                        <button class="form__btn btn">add</button>
+                                    </div>
+                                </div>
+                                <div class="form__col">
+                                    <h3 class="form__col-title">Купити продукт</h3>
+                                    <div class="form__input-button">
+                                        <input class="form__input-line" type="text" placeholder="Введіть назву елемента">
+                                        <button class="form__btn btn">buy</button>
+                                    </div>
+                                </div>
+                                <div class="form__col">
+                                    <h3 class="form__col-title">Інші дії</h3>
+                                    <button class="form__btn btn">print list</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="exercise__output">
+                        <div class="exercise__output-field"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
+        <section class="exercise" id="exercise2">
+            <div class="container">
+                <h2 class="exercise__title">Exercise 2</h2>
+                <p class="exercise__description">
+                    Создать массив, описывающий чек в магазине.
+                    Каждый элемент массива состоит из названия
+                    товара, количества и цены за единицу товара.
+                    Написать следующие функции:
+                </p>
+                <ol>
+                    <li>
+                        Распечатка чека на экран;
+                    </li>
+                    <li>
+                        Подсчет общей суммы покупки;
+                    </li>
+                    <li>
+                        Получение самой дорогой покупки в чеке;
+                    </li>
+                    <li>
+                        Подсчет средней стоимости одного товара в чеке.
+                    </li>
+                </ol>
+               
+                <div class="exercise__wrapper">
+                    <div class="exercise__input">
+                        <form class="exercise__complex-form form" action="#" method="GET" name="exercise_2">
+                            <div class="form__wrapper">
+                                
+                                <div class="form__col">
+                                    <h3 class="form__col-title">Роздрукувати чек</h3>
+                                    <button class="form__btn btn">print list</button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="exercise__output">
+                        <div class="exercise__output-field"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
+        <section class="exercise" id="exercise3">
+            <div class="container">
+                <h2 class="exercise__title">Exercise 3</h2>
+                <p class="exercise__description">
+                    Создать массив CSS-стилей (цвет, размер шрифта,
+                    выравнивание, подчеркивание и т. д.).
+                    Каждый элемент массива – это объект,
+                    состоящий из двух свойств: название стиля и
+                    значение стиля. Написать функцию, которая
+                    принимает массив стилей и текст, и выводит
+                    этот текст с помощью
+                    <span style="font-family:monospace;">
+                        document.write()
+                    </span>
+                    в тегах 
+                    <span style="font-family:monospace;">
+                        &lt;p&gt;
+                        &lt;/p&gt;
+                    </span>
+                    добавив в открывающий тег атрибут style со всеми
+                    стилями, перечисленными в массиве.
+                </p>
+                <div class="exercise__wrapper">
+                    <div class="exercise__input">
+                        <form class="exercise__complex-form form" action="#" method="GET" name="exercise_2">
+                            <div class="form__input-button">
+                                <input class="form__input-line" type="text" placeholder="Введіть текст для відображення">
+                                <button class="form__btn btn">print</button>
+                            </div>
+                            <input class="form__input-line" type="text" placeholder="Введіть назву стиля">
+                            <input class="form__input-line" type="text" placeholder="Введіть значення стилю">
+                            <button class="form__btn btn">print</button>
                         </form>
                     </div>
                     <div class="exercise__output">

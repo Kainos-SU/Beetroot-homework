@@ -113,7 +113,7 @@ Cart.prototype.addElement = function (element) {
         this.cart[index].price = element.price;
     }
     this.cart[index].count += element.count;
-    this.cart[index].totalSum = this.cart[index].price * this.cart[index].count;
+    this.cart[index].totalPrice = this.cart[index].price * this.cart[index].count;
     return this.cart[index];
 }
 
@@ -123,6 +123,63 @@ Cart.prototype.createAndAdd = function (name, price, count) {
     return this.addElement(element);
 }
 
+Cart.prototype.remove = function (name, count) {
+    const index = this.cart.findIndex(e => e.name.toLowerCase() === name.toLowerCase());
+
+    if (index === -1) {
+        return null;
+    }
+
+    if (count === undefined) {
+        return this.cart.splice(index, 1)[0];
+    }
+
+    count = parseInt(count);
+    if (isNaN(count)) {
+        throw TypeError("Count value is invalid!");
+    }
+
+    this.cart[index].removeItem(parseInt(count));
+
+    if (this.cart[index].count === 0) {
+        return this.cart.splice(index, 1);
+    }
+
+    return this.cart[index];
+}
+
+Cart.prototype.countStatistic = function() {
+    const unicItems = this.cart.length;
+    if (unicItems === 0) {
+        return null;
+    }
+
+    const totalItems = this.cart.reduce((acc=0, item)=> acc + item.count, 0);
+    console.log(totalItems);
+    const totalCost = this.cart.reduce((acc, item) => acc + item.totalPrice, 0);
+
+    const result =  {
+        unicItems,
+        totalItems,
+        totalCost,
+        itemsList: []
+    };
+
+    for (let i of this.cart) {
+        const item = {
+            name: i.name,
+            cost: i.price,
+            count: i.count
+        };
+        result.itemsList.push(item);
+    }
+
+    return result;
+}
+
+
+//============Вирішення задачі========================================
+ 
 const cart = new Cart();
 
 vadimsExercise.btn[0].addEventListener('click', e=>{
@@ -140,4 +197,336 @@ vadimsExercise.btn[0].addEventListener('click', e=>{
 
     let added = cart.createAndAdd(name, price);
     vadimsExercise.print(`Додано ${added.name} вартістю ${added.price}$<br>Кількість ${added.count}`);
+});
+
+vadimsExercise.btn[1].addEventListener("click", e => {
+    e.preventDefault();
+
+    const input = vadimsExercise.input[2].value;
+
+    if (input === "") {
+        vadimsExercise.print("Введіть назву елемента для видалення!");
+        return;
+    }
+    const deletedItem = cart.remove(input);
+    if (deletedItem !== null) {
+        vadimsExercise.print(`${deletedItem.name} видалено.`);
+    } else {
+        vadimsExercise.print(`${input[0].toUpperCase() + input.slice(1)} відсутній в корзині`);
+    }
+});
+
+vadimsExercise.btn[2].addEventListener("click", e=>{
+    e.preventDefault();
+
+    const statistic = cart.countStatistic();
+    if (statistic === null) {
+        vadimsExercise.print("Корзина порожня");
+        return;
+    }
+
+    vadimsExercise.print(`Кількість унікальних елементів - ${statistic.unicItems}<br>
+                          Загальна кількість елементів - ${statistic.totalItems}<br>
+                          Загальна вартість елементів - ${statistic.totalCost}`);
+
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    table.append(thead);
+    let tr = document.createElement("tr");
+    let td = document.createElement("td");
+    td.innerText = "Список продуктів"
+    tr.append(td);
+    thead.append(tr);
+    tr = document.createElement("tr");
+    td = document.createElement("td");
+    td.innerText = "Назва"
+    tr.append(td);
+    td = document.createElement("td");
+    td.innerText = "Ціна"
+    tr.append(td);
+    td = document.createElement("td");
+    td.innerText = "Кількість"
+    tr.append(td);
+    thead.append(tr);
+
+    const tbody = document.createElement("tbody");
+    table.append(tbody);
+
+    for (let i of statistic.itemsList) {
+        tr = document.createElement("tr");
+        tr.innerHTML = `<td>${i.name}</td><td>${i.cost}</td><td>${i.count}</td>`;
+        tbody.append(tr);
+    }
+
+    vadimsExercise.output.append(table);
+});
+
+//===============Exercise 1=============================
+const exercise1 = new SimpleSection("exercise1");
+exercise1.btn = Array.from(exercise1.section.querySelectorAll(".btn"));
+
+function Product (name, count=1) {
+    this.name = name;
+    this.count = count;
+    this.check = false;
+}
+
+const cart1 = [];
+
+cart1.push(new Product("Coffe", 2));
+cart1.push(new Product("Milk", 1));
+cart1.push(new Product("Juice", 3));
+
+function addItem (name, arr) {
+    const index = arr.findIndex(i=>i.name.toLowerCase() === name.toLowerCase());
+    if (index === -1) {
+        arr.push(new Product(name));
+        return;
+    }
+
+    arr[index].count++;
+    return arr[index];
+}
+
+function formList (arr) {
+    arr.sort((i,j)=>{
+        if(i.check) {
+            return -1;
+        }
+        if (j.check) {
+            return 1;
+        }
+
+        if (i.check === j.check) {
+            if (i.name > j.name) {
+                return 1
+            }
+            if (i.name < j.name) {
+                return -1;
+            }
+            return 0;
+        }
+    });
+    let result = "";
+    for (let i of arr) {
+        result += `<p><span>${i.name}</span><span>${i.count}</span><span>${i.check ? "✓" : "x"}</span></p>`
+    }
+
+    return result;
+}
+
+function buy (item, arr) {
+    const index = arr.findIndex(i=>i.name.toLowerCase() === item.toLowerCase());
+    if (index === -1) {
+        return null;
+    }
+
+    arr[index].check = true;
+    return index;
+}
+
+
+exercise1.btn[0].addEventListener("click", e=>{
+    e.preventDefault();
+
+    const input = exercise1.input[0].value;
+    if (input === "") {
+        exercise1.print("Введіть назву продукта!");
+        return;
+    }
+
+    addItem(input, cart1);
+
+    exercise1.print(formList(cart1));
+});
+
+exercise1.btn[1].addEventListener("click", e=>{
+    e.preventDefault();
+
+    const input = exercise1.input[1].value;
+    if (input === "") {
+        exercise1.print("Введіть назву продукта!");
+        return;
+    }
+
+    buy(input, cart1);
+
+    exercise1.print(formList(cart1));
+});
+
+exercise1.btn[2].addEventListener("click", e=>{
+    e.preventDefault();
+
+    exercise1.print(formList(cart1));
+});
+
+
+//=================Exercise 2================================
+const exercise2 = new SimpleSection("exercise2");
+function CheckItem(name, price, count=1) {
+    this.name = name;
+    this.price = parseFloat(price);
+    if (isNaN(this.price)) {
+        throw TypeError("Price has invalid value!");
+    }
+    this.count = parseInt(count);
+    if (isNaN(this.count)) {
+        throw TypeError("Count has invalid value!");
+    }
+}
+
+const checkList = [];
+checkList.push(new CheckItem("Milk", 5, 5));
+checkList.push(new CheckItem("Coffe", 2, 10));
+checkList.push(new CheckItem("Meat", 5));
+checkList.push(new CheckItem("Potato", 20, 5));
+
+function checkSum (arr) {
+    let result = 0;
+    for (let i of arr) {
+        result += i.price * i.count;
+    }
+
+    return result;
+}
+
+function checkAvarege (arr) {
+    let sum = 0;
+    let counter = 0;
+    for (let i of arr) {
+        sum += i.price * i.count;
+        counter += i.count;
+    }
+
+    return sum / counter;
+}
+
+function formCheckList (arr) {
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+    table.append(thead);
+    table.append(tbody);
+    let tr = document.createElement("tr");
+    let td = document.createElement("td");
+    for (let i of ["Назва", "Кількість", "Вартість", "Сумарна вартість"]) {
+        td.innerText = i;
+        tr.append(td);
+        td = document.createElement("td");
+    }
+    thead.append(tr);
+    tr = document.createElement("tr");
+    td = document.createElement("td");
+
+    for (let i of arr) {
+        for (let j of ["name", "price", "count"]) {
+            td.innerText = i[j];
+            tr.append(td);
+            td = document.createElement("td");
+        }
+        td.innerText = `${i.price * i.count}`;
+        tr.append(td);
+        tbody.append(tr);
+        td = document.createElement("td");
+        tr = document.createElement("tr");
+    }
+
+
+    td.innerText = "Сумарна вартість товарів";
+    tr.append(td);
+    td = document.createElement("td");
+    td.innerText = "" + checkSum(arr);
+    tr.append(td);
+    tbody.append(tr);
+    tr = document.createElement("tr");
+    td = document.createElement("td");
+    td.innerText = "Середня вартість товару";
+    tr.append(td);
+    td = document.createElement("td");
+    td.innerText = "" + checkAvarege(arr);
+    tr.append(td);
+    tbody.append(tr);
+
+    return table;
+}
+
+function findMostExpencive (arr) {
+    const result = arr[0];
+    for (let i = 1; arr.length < i; i++) {
+        if (result.price * result.count > arr[i].price * arr[i].count) {
+            result = arr[i];
+        }
+    }
+
+    return result;
+}
+
+exercise2.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    exercise2.output.append(formCheckList(checkList));
+    const expencive = findMostExpencive(checkList);
+    exercise2.print(
+        `<p>Найдорожча покупка
+            <span>${expencive.name}</span>
+            <span>${expencive.count}</span>
+            <span>${expencive.price}$</span>
+            <span>${expencive.price * expencive.count}$</span>
+        </p>`,
+        false
+    );
+});
+
+
+//==================Exercise 3==================
+const exercise_3 = new SimpleSection("exercise3");
+exercise_3.btn1 = exercise_3.section.querySelectorAll(".btn")[1];
+
+const styles = [
+    {
+        name: "text-align",
+        value: "center"
+    },
+    {
+        name: "font-size",
+        value: "2rem"
+    },
+    {
+        name: "font-family",
+        value: "monospace"
+    },
+    {
+        name: "background-color",
+        value: "#f00"
+    }
+];
+
+function styledOutput (style, message) {
+    let result = '<p style="';
+    for (let i of style) {
+        result += `${i.name}:${i.value};`;
+    }
+    result += '">' + message + "</p>";
+    return result;
+}
+
+function addStyle (name, value, arr) {
+    arr.push({name, value});
+}
+
+exercise_3.btn.addEventListener("click", e=>{
+    e.preventDefault();
+
+    const input = exercise_3.input[0].value;
+    const result = styledOutput(styles, input);
+    exercise_3.print(result);
+});
+
+exercise_3.btn1.addEventListener ("click", e=>{
+    e.preventDefault();
+
+    const styleName = exercise_3.input[1].value;
+    const styleValue = exercise_3.input[2].value;
+
+    addStyle(styleName, styleValue, styles);
 });
