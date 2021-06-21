@@ -511,7 +511,13 @@ function styledOutput (style, message) {
 }
 
 function addStyle (name, value, arr) {
-    arr.push({name, value});
+    const index = arr.findIndex(i=>i.name.toLowerCase() === name.toLowerCase());
+    if (index === -1) {
+        arr.push({name, value});
+        return arr[-1];
+    }
+    arr[index].value = value;
+    return arr[index];
 }
 
 exercise_3.btn.addEventListener("click", e=>{
@@ -530,3 +536,217 @@ exercise_3.btn1.addEventListener ("click", e=>{
 
     addStyle(styleName, styleValue, styles);
 });
+
+//=================Exercise 4=============================
+let section = document.getElementById("exercise4");
+
+const exercise_4 = {
+    section: section,
+    inputsSelect: Array.from(section.querySelectorAll("select.form__select")),
+    btn: Array.from(section.querySelectorAll(".btn")),
+    output: section.querySelector(".exercise__output-field"),
+};
+
+//=================Constructors=============================
+function Audience (name, space, faculty) {
+    this.name = name;
+    space = parseInt(space);
+    if (isNaN(space)) {
+        throw TypeError("Space has incorect value!");
+    }
+    this.space = space;
+    this.faculty = faculty;
+}
+
+function StudentGroops (name, studentCount, faculty) {
+    studentCount = parseInt(studentCount);
+    if (isNaN(studentCount)) {
+        throw TypeError("studentCount has invalid value!");
+    }
+    this.studentCount = studentCount;
+    this.name = name;
+    this.faculty = faculty;
+}
+
+//================Arrays====================================
+const groopName = [
+    "Embeded Development",
+    "FrontEnd",
+    "Електротехнічні системи автоматизації",
+    "Агрокультури"
+];
+
+const facultyName = [
+    "Прогамування",
+    "Сільське господарство",
+    "Електротехніка"
+];
+
+let option = document.createElement("option");
+for (let i of facultyName) {
+    option.innerText = i;
+    option.setAttribute("value", i);
+    exercise_4.inputsSelect[0].append(option);
+    option = document.createElement("option");
+}
+
+const audienceName = [
+    "Філософські питання електроніки",
+    "Цікавинки в полі",
+    "Аудиторія вивчення способів відстрілу кінцівок",
+    "Веб технології",
+    "Е-е-ем, та клас по БЕМ-у легше придумати ніж цю фігню"
+];
+
+function getRandomNumber(min, max) {
+    if (min > max) {
+        [min, max] = [max, min];
+    }
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+const audienceList = [
+    new Audience(audienceName[1], getRandomNumber(10, 20), facultyName[1]),
+    new Audience(audienceName[0], getRandomNumber(10, 20), facultyName[2]),
+    new Audience(audienceName[4], getRandomNumber(10, 20), facultyName[1]),
+    new Audience(audienceName[2], getRandomNumber(10, 20), facultyName[0]),
+    new Audience(audienceName[3], getRandomNumber(10, 20), facultyName[0])
+    
+];
+
+const groopList = [
+    new StudentGroops(groopName[1], getRandomNumber(10, 20), facultyName[0]),
+    new StudentGroops(groopName[2], getRandomNumber(10, 20), facultyName[2]),
+    new StudentGroops(groopName[3], getRandomNumber(10, 20), facultyName[1]),
+    new StudentGroops(groopName[0], getRandomNumber(10, 20), facultyName[0]),
+];
+
+for (let i of groopList) {
+    option.innerText = i.name;
+    option.setAttribute("value", i.name);
+    exercise_4.inputsSelect[1].append(option);
+    option = document.createElement("option");
+}
+
+//==============Implementation===============================================
+
+const parsedAudience = {
+    list: [],
+    faculty: "none",
+    groop: undefined,
+    sortByName: true,
+    sortGrow: true,
+};
+
+function printAudience (arr) {
+    exercise_4.output.innerHTML = "";
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+    table.append(thead);
+    table.append(tbody);
+
+    let tr = document.createElement("tr");
+    thead.append(tr);
+    let td = document.createElement("td");
+    td.innerText = "Назва аудиторії";
+    tr.append(td);
+    td = document.createElement("td");
+    td.innerText = "Факультет аудиторії";
+    tr.append(td);
+    td = document.createElement("td");
+    td.innerText = "Кількість місць";
+    tr.append(td);
+    tr = document.createElement("tr");
+    td = document.createElement("td");
+
+
+    for (let i of arr) {
+        td.innerText = i.name;
+        tr.append(td);
+        td = document.createElement("td");
+        td.innerText = i.faculty;
+        tr.append(td);
+        td = document.createElement("td");
+        td.innerText = i.space;
+        tr.append(td);
+        tbody.append(tr);
+        td = document.createElement("td");
+        tr = document.createElement("tr");
+    }
+    
+    return table;
+}
+
+function facultyFilter (arr, faculty) {
+    if (faculty !== "none") {
+        const newArr = arr.filter(aud=>aud.faculty.toLowerCase() === faculty.toLowerCase());
+        return newArr;
+    }
+    return arr;
+}
+
+function groopFilter (arr, groopObj) {
+    if (groopObj === undefined) {
+        return arr;
+    }
+
+    const newArr = arr.filter(aud=>aud.faculty === groopObj.faculty && aud.space >= groopObj.studentCount);
+    return newArr;
+}
+
+function sortByKey (array, grow, key) {
+    if (grow) {
+        array.sort((a,b)=>{
+            if (a[key] > b[key]) {
+                return 1;
+            }
+            if (a[key] < b[key]) {
+                return -1;
+            }
+            return 0;
+        });
+    } else {
+        array.sort((a,b)=>{
+            if (a[key] > b[key]) {
+                return -1;
+            }
+            if (a[key] < b[key]) {
+                return 1;
+            }
+            return 0;
+        });
+    }
+}
+
+function parseAndPrint(parseObj) {
+    parseObj.list = [...audienceList];
+    if (parseObj.faculty !== "none") {
+        parseObj.list = facultyFilter(parseObj.list, parseObj.faculty);
+    }
+    if (parseObj.groop !== undefined) {
+        parseObj.list = groopFilter(parseObj.list, parseObj.groop);
+    }
+    if (parseObj.sortByName) {
+        sortByKey(parseObj.list, parseObj.sortGrow, "name");
+    }else {
+        sortByKey(parseObj.list, parseObj.sortGrow, "space");
+    }
+
+    return printAudience(parseObj.list);
+}
+
+//========EventListeners==========================================
+exercise_4.inputsSelect.forEach(e=>{
+    e.addEventListener("change", e=>{
+        if (e.target.getAttribute("name") === "audience") {
+            parsedAudience.faculty = e.target.value;
+        }
+        if (e.target.getAttribute("name") === "groops") {
+            
+            parsedAudience.groop = groopList.find(element=>element.name === e.target.value);
+        }
+
+        exercise_4.output.append(parseAndPrint(parsedAudience));
+    });
+})

@@ -210,6 +210,78 @@
             </div>
         </section>
 
+        <section class="exercise" id="exercise4">
+            <div class="container">
+                <h2 class="exercise__title">Exercise 4</h2>
+                <p class="exercise__description">
+                    Создать массив аудиторий академии. Объект-аудитория
+                    состоит из названия, количества посадочных мест
+                    (от 10 до 20) и названия факультета, для которого
+                    она предназначена. Написать несколько функций для
+                    работы с ним.
+                </p>
+                <ol>
+                    <li>
+                        Вывод на экран всех аудиторий;
+                    </li>
+                    <li>
+                        Вывод на экран аудиторий для указанного факультета;
+                    </li>
+                    <li>
+                        Вывод на экран только тех аудиторий, которые
+                        подходят для переданной группы. Объект-группа
+                        состоит из названия, количества студентов и
+                        названия факультета;
+                    </li>
+                    <li>
+                        Функция сортировки аудиторий по количеству мест;
+                    </li>
+                    <li>
+                        Функция сортировки аудиторий по названию (по алфавиту).
+                    </li>
+                </ol>
+                <div class="exercise__wrapper">
+                    <div class="exercise__input">
+                        <form class="exercise__complex-form form" action="#" method="GET" name="exercise_2">
+                           <div>
+                               <label>
+                                    Фільтрація по факультетам
+                                   <select name="audience" class="form__select">
+                                       <option value="none">Без фільтру</option>
+                                    </select>
+                                </label>
+                           </div>
+                            <div>
+                                <label>
+                                    Фільтрація по группам
+                                    <select name="groops" class="form__select">
+                                       <option value="none">Без фільтру</option>
+                                   </select>
+                                </label>
+                            </div>
+                           
+                           
+                           <fieldset>
+                               <legend>Сортування</legend>
+                               <div class="form__wrapper">
+                                   <button class="form__btn btn" data-key="name">
+                                       За іменем
+                                    </button>
+                                   <button class="form__btn btn" data-key="space">
+                                       За кількістю місць
+                                    </button>
+                               </div>
+                           </fieldset>
+                        </form>
+                    </div>
+                    <div class="exercise__output">
+                        <div class="exercise__output-field"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
     </main>
     <script src="./js/main.js"></script>
 </body>
