@@ -749,4 +749,25 @@ exercise_4.inputsSelect.forEach(e=>{
 
         exercise_4.output.append(parseAndPrint(parsedAudience));
     });
-})
+});
+
+exercise_4.btn.forEach(btn=>{
+    btn.addEventListener('click', event=>{
+        event.preventDefault();
+
+        exercise_4.btn.forEach(btn=>{btn.children[0].innerHTML = ""})
+        if (event.target.dataset["key"] === "name") {
+            parsedAudience.sortByName = true;
+        } else {
+            parsedAudience.sortByName = false;
+        }
+        parsedAudience.sortGrow = !parsedAudience.sortGrow;
+        if (parsedAudience.sortGrow) {
+            event.target.children[0].innerHTML = "&downarrow;";
+        }else {
+            event.target.children[0].innerHTML = "&uparrow;";
+        }
+
+        exercise_4.output.append(parseAndPrint(parsedAudience));
+    });
+});
