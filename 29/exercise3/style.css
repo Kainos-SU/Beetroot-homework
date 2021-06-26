@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.trafic-light {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+    width: calc((100vh - 80px) / 3);
+    margin-bottom: 10px;
+}
+
+.trafic-light__frame {
+    position: relative;
+    background-color: #333;
+    width: 100%;
+}
+
+.trafic-light__frame::before {
+    display: block;
+    content: "";
+    padding-top: 100%;
+}
+
+.trafic-light__light {
+    border-radius: 50%;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.trafic-light__light::before {
+    display: block;
+    content: "";
+    padding-top: 100%;
+}
+
+.trafic-light__frame:nth-child(1) .trafic-light__light {
+    color: rgba(255, 0, 0, 0.2);
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.trafic-light__frame:nth-child(2) .trafic-light__light {
+    color: rgba(255, 255, 0, 0.2);
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
+.trafic-light__frame:nth-child(3) .trafic-light__light {
+    color: rgba(0, 255, 0, 0.2);
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
