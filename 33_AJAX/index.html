@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/elements.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/omdAPI.js"></script>
+
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <h1 class="header__logo">
+                <span>ShityMovieSearch</span>
+                <span>SMS</span>
+            </h1>
+        </div>
+    </header>
+    
+    <main class="main">
+        <form action="GET" name="search" class="search">
+            <input type="text" name="search" class="search__input">
+            <!-- <select name="select" class="search__select">
+                <option value="any">Any</option>
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+            </select> -->
+            
+            <div class="search__select select">
+                <span id="select">Hello</span>
+                <input type="hidden" name="select" value="any">
+                <ul class="select__list">
+                    <li class="select__items">Any</li>
+                    <li class="select__items">Movie</li>
+                    <li class="select__items">Series</li>
+                    <li class="select__items">Episode</li>
+                </ul>
+            </div>
+            <button type="submit" class="search__button btn">&#128269;</button>
+        </form>
+        <div class="film-container">
+            <div class="container">
+                <div class="film-container__wrapper">
+                    <ul class="film-container__list">
+
+                    </ul>
+                    <button class="film-container__load-more btn">Наступна сторінка</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    <script src="js/select.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
