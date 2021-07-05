@@ -1,7 +1,7 @@
 class OMDAPI {
     constructor (key) {
         this.key = key;
-        this.url = `http://www.omdbapi.com/?apikey=${this.key}`;
+        this.url = `https://www.omdbapi.com/?apikey=${this.key}`;
         this.query = null;
         this.pages = 1;
         this.page = 1;
