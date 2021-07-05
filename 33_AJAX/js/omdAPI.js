@@ -22,6 +22,7 @@ class OMDAPI {
         if (query !== this.query) {
             this.query = query;
             this.page = 1;
+            page = this.page;
         }
         let apiUrl = this.url + `&s="${query}"&page=${page}`;
         if (type !== undefined) {

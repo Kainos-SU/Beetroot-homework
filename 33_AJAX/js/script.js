@@ -1,5 +1,6 @@
 const modal = new FilmModal();
 const omdb = new OMDAPI("373a25c9");
+modal.add();
 
 $(".search__button").first().on("click", e=>{
     e.preventDefault();
@@ -28,3 +29,12 @@ $(".search__button").first().on("click", e=>{
         }
     }, type);
 });
+
+
+$("ul.film-container__list").on("click", ".btn", function(e){
+    const filmId = $(e.target).parents(".card").data("id");
+    omdb.filmById(filmId, json=>{
+        modal.parse(json);
+        modal.show();
+    });
+})

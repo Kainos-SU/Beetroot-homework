@@ -23,19 +23,44 @@ class Modal {
             transform: "translate(-50%, -50%)",
             backgroundColor: "white",
             padding: "5px",
+            paddingTop: "50px",
             overflowY: "scroll"
         });
+        this.close = $("<span>X</span>");
+        this.close.css ({
+            position: 'absolute',
+            top: "5px",
+            right: "10px",
+            fontSize: "42px",
+            color: "black",
+            cursor: "pointer",
+            fontFamily: "Arial, sans-serif"
+
+        });
+        this.close.on("click", function() {
+            this.hide();
+        }.bind(this));
+        this.window.append(this.close);
 
         this.backPlate.append(this.window);
+        this.backPlate.on("click", (function(){
+            this.hide();
+        }).bind(this));
     }
 
-    show() {
+    add() {
+        this.backPlate.css("display", "none");
         $("body").append(this.backPlate);
     }
 
     hide() {
         this.window.empty();
-        this.backPlate.remove();
+        this.window.append(this.close);
+        this.backPlate.fadeOut(300);
+    }
+
+    show() {
+        this.backPlate.fadeIn(300);
     }
 }
 
