@@ -5,6 +5,7 @@ class OMDAPI {
         this.query = null;
         this.pages = 1;
         this.page = 1;
+        this.type;
     }
 
     filmById (id, callback) {
@@ -12,6 +13,7 @@ class OMDAPI {
             return;
         }
         const apiUrl = this.url + `&i=${id}&plot=full`;
+        console.log(apiUrl);
         fetch (apiUrl)
             .then(responce=>responce.json())
             .then(callback)
@@ -24,17 +26,19 @@ class OMDAPI {
             this.page = 1;
             page = this.page;
         }
-        let apiUrl = this.url + `&s="${query}"&page=${page}`;
         if (type !== undefined) {
-            apiUrl += `&type=${type}`;
+            this.type = type;
         }
-        console.log(apiUrl);
+
+        let apiUrl = this.url + `&s="${query}"&page=${page}`;
+        if (this.type !== undefined) {
+            apiUrl += `&type=${this.type}`;
+        }
         fetch(apiUrl)
             .then(responce=>responce.json())
             .then(json=>{
-                if (query !== this.query) {
-                    this.pages = Math.ceil(json.totalResults / 10);
-                }
+                this.pages = Math.ceil(json.totalResults / 10);
+                console.log(json.totalResults, this.pages);
                 callback(json.Search);
                 this.page++;
             })

@@ -43,7 +43,9 @@ class Modal {
         this.window.append(this.close);
 
         this.backPlate.append(this.window);
-        this.backPlate.on("click", (function(){
+        this.backPlate.on("click", (function(e){
+            e.stopPropagation();
+            console.log(e.target);
             this.hide();
         }).bind(this));
     }
