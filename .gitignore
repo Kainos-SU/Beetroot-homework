@@ -5,3 +5,5 @@ inkscape-1.0.2-2-x64.7z
 */classwork
 */examples_of_boring_dyadyka
 *.zip
+node_modules
+.cache
