@@ -28,6 +28,11 @@ class OMDAPI {
         }
         if (type !== undefined) {
             this.type = type;
+        } else {
+            this.type = undefined;
+        }
+        if (page) {
+            this.page = page;
         }
 
         let apiUrl = this.url + `&s="${query}"&page=${page}`;
@@ -43,6 +48,43 @@ class OMDAPI {
                 this.page++;
             })
             .catch(err=>console.warn(err));
+    }
+
+    setFavorite (id) {
+        const array = [];
+        const value = window.localStorage.getItem("favoriteMovie");
+        if (value !== null) {
+            array.push(...JSON.parse(value));
+        }
+        array.push(String(id));
+        console.log(array);
+        window.localStorage.setItem("favoriteMovie", JSON.stringify(array));
+    }
+
+    removeFromFavorite(id) {
+        const array = JSON.parse(window.localStorage.getItem("favoriteMovie"));
+        array.splice(array.indexOf(id + ""), 1);
+        window.localStorage.setItem("favoriteMovie", JSON.stringify(array));
+    }
+
+    getFavoriteId() {
+        return JSON.parse(window.localStorage.getItem("favoriteMovie"));
+    }
+
+
+    async getFavorite (callback) {
+        const array = window.localStorage.getItem("favoriteMovie");
+        if (array === null) {
+            callback(null);
+            return;
+        }
+
+        const filmArray = [];
+        for (const id of JSON.parse(array)) {
+            const movie = await fetch(this.url + `&i=${id}`).then(response=>response.json());
+            filmArray.push(movie);
+        }
+        callback(filmArray);
     }
 }
 

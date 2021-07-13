@@ -276,3 +276,23 @@ ul {
 }
 
 
+.loader {
+    display: none;
+    width: 100px;
+    height: 100px;
+    border: 8px solid rgba(0, 0, 0, 0.2);
+    border-top-color: black;
+    border-radius: 50%;
+    margin: 5px auto;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
