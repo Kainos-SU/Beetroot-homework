@@ -22,7 +22,24 @@ class Card {
         this.img.css({
             width: "100%",
         });
-        this.poster.append(this.img);
+        this.star = $('<svg class="favorite" viewBox="0 -10 511.98685 511" xmlns="http://www.w3.org/2000/svg"><use href="./svg/star.svg#golden_star"></use></svg>')
+        this.star.css ({
+            position: "absolute",
+            top: "5%",
+            right: "5%",
+            width: "40px",
+            height: "40px",
+            fillOpacity: "0.3",
+            fill:"#F8D64E",
+            stroke: "black",
+            strokeWidth: "3",
+            transition: "fill-opacity 0.15s"
+        });
+        this.poster.on("click", ".favorite", (e)=>{
+            const value = $(e.target).parents(".favorite").css("fillOpacity");
+            $(e.target).parents(".favorite").css("fillOpacity", value==="0.3"?"1":"0.3");
+        });
+        this.poster.append(this.img, this.star);
         this.description = $(`<div class="card__description"></div>`);
         this.description.css ({
             width: "100%",
@@ -66,10 +83,21 @@ class ListItem extends Card {
     }
 
     append(el) {
-        console.log(el);
         $(el).append(this.listItem)
     }
 
+}
+
+class Movie extends ListItem {
+    constructor (el, list) {
+        super(el);
+        if (list !== null && list.includes(el.imdbID + "")) {
+            this.star.css("fillOpacity", "1");
+            this.main.data("isFavorite", "true");
+        } else {
+            this.main.data("isFavorite", "false");
+        }
+    }
 }
 
 const el = {
