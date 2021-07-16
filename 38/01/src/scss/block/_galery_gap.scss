@@ -1,0 +1,27 @@
+.galery-gap {
+    padding: 83px 0 82px;
+    background-color: #fff;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr, 1fr, 580/360*1fr;
+        gap: 54px;
+    }
+
+    &__item {
+        font-size: 0;
+    }
+
+    &__item--big {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+    }
+
+    &__img {
+        width: 100%;
+    }
+}
