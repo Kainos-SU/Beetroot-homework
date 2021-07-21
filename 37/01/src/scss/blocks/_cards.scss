@@ -1,0 +1,301 @@
+.playing-card {
+    display: block;
+    position: relative;
+    min-width: 150px;
+    max-width: 300px;
+    width: 100%;
+    perspective: 500px;
+
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 160%;
+    }
+
+    &:hover &__flipable {
+        animation: flipBackward 0.25s forwards linear;
+    }
+    
+    &__flipable {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 3.5%;
+        border: 1px solid rgba(150,150,150,0.7);
+        top: 0;
+        left: 0;
+        transform-style: preserve-3d;
+        animation: flipForward 0.25s forwards linear;
+
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: url("../img/card-back.png");
+            background-position: top center;
+            background-size: cover;
+            backface-visibility: hidden;
+            transform: rotateY(0.5turn);
+            border-radius: 3.5%;
+        }
+    }
+
+    &__wrapper {
+        padding: 4% 3.5%;
+        display: flex;
+        background-color: #fff;
+        border-radius: 3.5%;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    &__flipable &__fields {
+        width: 13%;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        &:last-child {
+            transform: rotate(0.5turn);
+        }
+
+        &:nth-child(2){
+            flex-direction: row;
+            flex: 1 1 auto;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__suit-fields {
+        flex: 1 1 43%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        &:nth-child(2) {
+            margin: 0 -10%;
+        }
+    }
+
+    &__value {
+        font-size: 30 / 16 * 1rem;
+        font-family: "Wire One", sans-serif;
+        font-weight: 700;
+    }
+
+    &__suit {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        transform: rotate(45deg);
+
+        &::before {
+            content:"";
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+        }
+    }
+
+    &--diamonds{
+        color: red;
+    }
+
+    &--diamonds &__suit {
+        &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: currentColor;
+        }
+    }
+
+    &--hearts {
+        color: red;
+    }
+
+    &--clubs {
+        color: black;
+    }
+
+    &--clubs &__suit {
+        & .circle {
+            position: absolute;
+            height: 35%;
+            width: 35%;
+            border-radius: 50%;
+
+            &:nth-child(1) {
+                top: 15%;
+                left: 15%;
+            }
+            &:nth-child(2) {
+                left: 40%;
+                top: 20%;
+            }
+            &:nth-child(3) {
+                left: 20%;
+                top: 40%;
+            }
+        }
+
+        &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 65%;
+            left: 65%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-top: none;
+            border-bottom-color: black;
+        }
+    }
+
+
+    &--spades {
+        color: black;
+    }
+
+    &--spades &__suit {
+        transform: rotate(225deg);
+
+        &::after {
+            content: "";
+            display:block;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-top: 0;
+            border-bottom-color: black;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            transform: translate(-50%, -50%) rotate(135deg);
+        }
+    }
+
+    &--spades &__value {
+        margin-bottom:40%;
+    }
+
+    & &__suit {
+        .circle {
+            background-color: currentColor;
+        }
+
+        .heart {
+            background-color: currentColor;
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            bottom: 15%;
+            right: 15%;
+            
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+                background-color: currentColor;
+            }
+            &::before {
+                top: -50%;
+                left:0;
+            }
+
+            &::after {
+                top: 0;
+                left: -50%;
+            }
+        }
+        
+        .square {
+            background-color: currentColor;
+        }
+    }
+
+    &--1 &__suit-fields,
+    &--J &__suit-fields,
+    &--Q &__suit-fields,
+    &--K &__suit-fields {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--5 &__suit-fields {
+        &:nth-child(2) {
+            justify-content: center;
+        }
+    }
+
+    &--7 &__suit-fields,
+    &--9 &__suit-fields,
+    &--10 &__suit-fields {
+        &:nth-child(2) {
+            height: 2 / 3 * 100%;
+        }
+    }
+
+    &--7 &__suit-fields,
+    &--9 &__suit-fields {
+        &:nth-child(2) {
+            justify-content: flex-start;
+        }
+    }
+
+}
+
+@keyframes flipForward {
+    0% {
+        transform: rotateY(0turn);
+    }
+    50% {
+        transform: rotateY(0.15turn);
+    }
+    75% {
+        transform: rotateY(0.25turn);
+    }
+    100% {
+        transform: rotateY(0.5turn);
+    }
+}
+
+@keyframes flipBackward {
+    0% {
+        transform: rotateY(0.5turn);
+    }
+    50% {
+        transform: rotateY(0.25turn);
+    }
+    75% {
+        transform: rotateY(0.15turn);
+    }
+    100% {
+        transform: rotateY(0turn);
+    }
+}
