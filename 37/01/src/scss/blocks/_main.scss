@@ -1,9 +1,25 @@
 .main {
+    background-color: rgb(34, 97, 5);
     &__wrapper {
+        width: 100%;
         min-height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 20px;
+        // display: grid;
+        // grid-template-columns: repeat(13, 1fr);
+        // grid-template-rows: 1fr 1fr 1fr 1fr;
+        // gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-evenly;
+        padding: 5px;
+        overflow: hidden;
+
+        & li {
+            flex: 0 1 7.5%;
+            width: calc(100% / 13 - 10px);
+            margin-bottom: 10px;
+
+        }
     }
 }

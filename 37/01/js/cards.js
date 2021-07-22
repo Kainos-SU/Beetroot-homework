@@ -25,7 +25,6 @@
         var fields = document.createElement("span");
         fields.className = "playing-card__fields";
         fields.innerHTML = '<span class="playing-card__value">' + (opt.value==1?"A":(opt.value+"").toUpperCase()) + '</span>';
-        console.log(fields.innerHTML);
         
         fields.appendChild(suit.cloneNode(true));
 
@@ -68,6 +67,29 @@
         return flipable;
     }
 
-    document.getElementById("test").appendChild(getBaseStructure({value: "k", suit: "diamonds"}));
-    
+    function getCards() {
+        var cards = document.getElementsByClassName("playing-card");
+        var i;
+        for (i = 0; i < cards.length; ++i) {
+            if (cards[i].hasAttribute("data-changed")===false || cards[i].getAttribute("data-changed")=="false") {
+                var sv = cards[i].className.match(/(?<=--)\w+/gm);
+                if (sv.length !== 2) {
+                    console.warn("Incorect number of classes" + sv);
+                    continue;
+                }
+                cards[i].innerHTML = "";
+                var opt = {};
+                var j;
+                for (j = 0; j < sv.length; ++j) {
+                    if (sv[j].length > 2) {opt.suit = sv[j]}
+                    else {opt.value = isNaN(sv[j])?sv[j]:(+sv[j])}
+                }
+                cards[i].append(getBaseStructure(opt));
+                cards[i].setAttribute("data-changed", true);
+            }
+        }
+        requestAnimationFrame(getCards);
+    }
+
+    getCards();    
 })()

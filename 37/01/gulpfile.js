@@ -33,9 +33,8 @@ function buildCSS(cb) {
             flexbox:true,
             grid:true,
         }))
-        .pipe(gulp.dest("." + path.sep + css));
-
-    cb();
+        .pipe(gulp.dest("." + path.sep + css))
+        .on("end", cb);
 }
 
 function buildHTML(cb) {
@@ -52,9 +51,9 @@ function buildHTML(cb) {
         minifyCSS:true,
         minifyJS:true,
     }))
-    .pipe(gulp.dest("."+ path.sep + "dist"));
-    
-    cb();
+    .pipe(gulp.dest("."+ path.sep + "dist"))
+    .on("end", cb);
+
 }
 
 function buildJS(cb) {
@@ -67,7 +66,7 @@ function buildJS(cb) {
     gulp.src(`${jsPath}*.js`)
         .pipe(minify())
         .pipe(gulp.dest(`.${path.sep}dist${path.sep}js`))
-    cb();
+        .on("end", cb);
 }
 
 function run (cb) {

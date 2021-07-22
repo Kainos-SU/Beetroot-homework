@@ -7,3 +7,9 @@
 ul {
     list-style: none;
 }
+
+@media screen and (max-width: 960px) {
+    html {
+        font-size: 10px;
+    }
+}
