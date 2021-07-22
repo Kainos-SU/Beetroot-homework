@@ -29,6 +29,7 @@ function buildCSS(cb) {
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename("style.css"))
         .pipe(autoprefixer({
+            env: ">1% IE10",
             flexbox:true,
             grid:true,
         }))
