@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form bindings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        window.onload = function () {
+
+            var sample = new Vue({
+                el: '#app',
+                data: {
+                    search: '',
+                    isEnabled: false,
+                    courses: [],
+                    city: ''
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <input type="text" v-model="search" placeholder="Поиск...">
+            <br>
+            <textarea v-model="search" cols="15" rows="5" placeholder="Поиск..."></textarea>
+            <br />
+            <div>Поиск: {{ search }}</div>
+            <hr>
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" v-model="isEnabled">
+                checkbox
+            </label>
+            <p class="text-muted">отмечен: {{ isEnabled }}</p>
+            <hr>
+            <div class="form-check row">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="frontend" v-model="courses">
+                    frontend
+                </label>
+            </div>
+            <div class="form-check row">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="backend" v-model="courses">
+                    backend
+                </label>
+            </div>
+            <div class="form-check row">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="nodejs" v-model="courses">
+                    nodejs
+                </label>
+            </div>
+
+            <p class="text-muted">Выбрано: {{ courses }}</p>
+            <hr>
+            <label class="form-check-label">
+                <input type="radio" value="Киев" v-model="city">
+                Киев
+            </label>
+            <br />
+            <label class="form-check-label">
+                <input type="radio" value="Полтава" v-model="city">
+                Полтава
+            </label>
+            <br />
+            <label class="form-check-label">
+                <input type="radio" value="Николаев" v-model="city">
+                Николаев
+            </label>
+            <p class="text-muted">Буду учиться в городе <span>{{ city }}</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

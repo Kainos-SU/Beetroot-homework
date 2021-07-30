@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var sample = new Vue({
+                el: '#app',
+                data: {
+                    telephones: [{
+                            name: 'Nokia 3',
+                            price: 400
+                        },
+                        {
+                            name: 'iPhone 5s',
+                            price: 500
+                        },
+                        {
+                            name: 'iPhone 6s',
+                            price: 600
+                        },
+                        {
+                            name: "iPhone 7s",
+                            price: 1000
+                        },
+                        {
+                            name: 'iPhone 8',
+                            price: 1800
+                        },
+                        {
+                            name: 'iPhone X',
+                            price: 2200
+                        },
+                        {
+                            name: 'HUAWEY P8',
+                            price: 350
+                        },
+                        {
+                            name: 'SAMSUNG NOTE 8',
+                            price: 750
+                        },
+                        {
+                            name: 'SAMSUNG GALAXY S8',
+                            price: 1300
+                        },
+                    ],
+                    basket: [],
+                    total: 0.00
+                },
+                watch: {
+                    basket: function () {
+                        this.updateTotal();
+                    }
+                },
+                created: function () {
+                    this.updateTotal()
+                },
+                methods: {
+                    updateTotal: function () {
+                        var length = this.basket.length;
+                        var t = 0;
+                        for (var i = 0; i < length; i++) {
+                            t += this.basket[i].price;
+                        }
+                        this.total = t;
+                    },
+                    buy: function (tel) {
+                        this.basket.push(tel);
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <br />
+        <div id="app">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Модель</th>
+                        <th>Цена</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr v-for="tel in telephones">
+                        <td>{{ tel.name }}</td>
+                        <td>{{ tel.price }}$</td>
+                        <td>
+                            <button class="btn btn-warning" v-on:click="buy(tel)">Купить</button></td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td class="footer">Сумма:</td>
+                        <td class="footer">{{ total }}$</td>
+                        <td class="footer"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

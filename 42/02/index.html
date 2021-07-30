@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <div style="display: none" v-bind:style="{'background-color': color}" v-show="true">{{ output }}</div>
+        <input type="text" v-model="message" v-on:keyup.enter="print">
+        <button v-on:click="print">Подтвердить</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        function shityHash (string) {
+            let result = 0;
+            for (const i of string) {
+                result += i.charCodeAt(0);
+            }
+            result = result & 0xffffff;
+            return "#" + result.toString(16).padStart(6, "a");
+        }
+
+        const App = {
+            data(){
+                return {
+                    message: '',
+                    output:"",
+                    color: "white",
+                }
+            },
+            methods: {
+                print: function () {
+                    this.output += "<br>"+ this.message;
+                    this.color = shityHash(this.message);
+                    this.message = '';
+                },
+            },
+        };
+        Vue.createApp(App).mount("#app");
+    </script>
+</body>
+</html>

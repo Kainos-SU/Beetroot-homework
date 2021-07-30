@@ -5,7 +5,7 @@ const sass = require("gulp-sass")(require("sass"));
 const minify = require('gulp-minify');
 const htmlmin = require('gulp-htmlmin');
 const autoprefixer = require('gulp-autoprefixer');
-const browserSync = require("browser-sync").create();
+//const browserSync = require("browser-sync").create();
 const fs = require("fs");
 const path = require("path");
 

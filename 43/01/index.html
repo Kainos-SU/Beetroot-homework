@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+<body>
+    
+    <h1>Lesson 43 Exercise 1</h1>
+
+    <div id="app">
+        <form action="POST">
+            <input type="text" name="color" v-model="input">
+            <button @click.prevent="pushColor">Вывести</button>
+        </form>
+        <ul>
+            <li v-for="color of colors" v-bind:style="{'background-color': color}">
+                <input type="text" name="colored" v-model="color">
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
